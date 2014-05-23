@@ -43,9 +43,9 @@ module.exports = {
     });
   }
 
-  logout: function(req, res) {
-    req.session.user = null;
-    res.send("Successfully logged out");
-  }
+  // logout: function(req, res) {
+  //   req.session.user = null;
+  //   res.send("Successfully logged out");
+  // }
   
 };
