@@ -7,13 +7,24 @@
  */
 
 module.exports = {
+	beforeCreate: function (attrs, next) {
+	var bcrypt = require('bcrypt');
 
-  attributes: {
-  	
-  	/* e.g.
-  	nickname: 'string'
-  	*/
-    
-  }
+	bcrypt.genSalt(10, function(err, salt) {
+	  if (err) return next(err);
+
+	  bcrypt.hash(attrs.password, salt, function(err, hash) {
+	    if (err) return next(err);
+
+	    attrs.password = hash;
+	    next();
+	  });
+	});
+	}
+
+	attributes: {
+		username : 'string',
+		password : 'string'
+	}
 
 };

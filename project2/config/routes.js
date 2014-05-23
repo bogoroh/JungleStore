@@ -37,6 +37,10 @@ module.exports.routes = {
     '/': {
         view:'home/index'
     },
+    '/distro/login':{
+        controller: "UserController",
+        action: 'login'
+    }
     '/distro': {
         controller: 'DistroController',
         action: 'index'
