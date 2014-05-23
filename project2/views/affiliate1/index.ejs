@@ -1,5 +1,5 @@
 <!-- Default home page -->
-<link type="text/css" href='http://sailsjs.org/styles/fonts.css' rel='stylesheet'/>
+<link type="text/css" href='/styles/affiliate1style.css' rel='stylesheet'/>
 
 <!--[if IE 7]>
     <style>
@@ -7,21 +7,16 @@
     </style>
 <![endif]-->
 
-<div class="top-bar">
-    <div class="container clearfix">
-        <img class="logo" src="http://sailsjs.org/images/sails-logo.jpg" />
-    </div>
-</div>
 
 <div class="container clearfix">
     <div class="main">
-        <h1 id="main-title"><%= __('Welcome') %></h1>
-        <h2>Affiliate Route 1</h2>
+
+        <h1>Affiliate 1</h1>
+        <% include nav %>
 
 
         <% for(var i=0; i<details.length; i++) {%>
            <p>
-
 
                 store price: <%= prices[i].price %><br>
 
@@ -30,41 +25,21 @@
                 msrp: <%= details[i].msrp %><br>
                 wholesale: <%= details[i].wholesale %><br>
                 category: <%= details[i].category %><br>
-                stock: <%= details[i].stock %>
+                stock: <%= details[i].stock %><br>
+                <% for(var j=0; j<details[i].photos.length; j++) {%>
+                   <img src="/images/<%= details[i].photos[j] %>.jpg">
+                <% } %>
+
+
+
+
             </p>
 
         <% } %>
 
 
+
+
     </div>
-    <div class="side-bar">
-        <h4 id="new">
-            New to Sails?
-        </h4>
-        <ul>
-            <li>
-                <a href="http://sailsjs.org">Visit sailsjs.org</a>
-            </li>
-            <li>
-                <a href="http://sailsjs.org/#!documentation">Documentation</a>
-            </li>
-        </ul>
-        <h4>
-            Next Steps
-        </h4>
-        <ul>
-            <li class="sprite single_page">
-                <a target="_blank" href="http://sailsjs.org">Build a single page app</a>
-            </li>
-            <li class="sprite traditional">
-                <a target="_blank" href="http://sailsjs.org">Build a traditional webapp</a>
-            </li>
-            <li class="sprite realtime">
-                <a target="_blank" href="http://sailsjs.org">Build a realtime app</a>
-            </li>
-            <li class="sprite api">
-                <a target="_blank" href="http://sailsjs.org">Build an API</a>
-            </li>
-        </ul>
-    </div>
+
 </div>

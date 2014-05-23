@@ -34,15 +34,14 @@ module.exports.routes = {
   // located at `views/home/index.ejs`
   //
   // (This would also work if you had a file at: `/views/home.ejs`)
-    '/test': {
-        controller: 'MainController',
-         action: 'login'
+    '/': {
+        view:'home/index'
     },
     '/distro': {
         controller: 'DistroController',
         action: 'index'
     },
-    '/distro/json/:key': {
+    '/distro/json/:key/:skus': {
         controller: 'DistroController',
         action: 'json'
     },

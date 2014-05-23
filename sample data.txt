@@ -1,0 +1,63 @@
+./mongoexport --db jungle --collection distro --csv --out /users/bryankarlerickson/desktop
+--fields sku, name, description, photos, msrp, wholesale, category, stock, id
+
+
+
+
+db.affiliate1.save([{sku: '00001', price: 18.99},{sku: '00002', price: 33.99},{sku: '00003', price: 21.99} ])
+
+db.affiliate2.save([{sku: '00002', price: 3.99},{sku: '00004', price: 15.99}])
+
+
+db.distrokeys.save([
+{
+    site: "Affiliate 1", apikey : '3CF3C254C4333EF75342F19BE3B8CEEF'
+},
+{
+    site: "Affiliate 2", apikey : '994D49B55DB0748324BB4A6366197730'
+}
+])
+
+
+
+db.distro.save([
+{
+    sku: '00001',
+    name: 'Product 1',
+    description: 'Description of Product 1',
+    photos: ['1.jpg','2.jpg','3.jpg'],
+    msrp: 10.99,
+    wholesale: 6.99,
+    category: 'sports',
+    stock: 300
+},
+{
+    sku: '00002',
+    name: 'Product 2',
+    description: 'Description of product 2',
+    photos: ['1.jpg','2.jpg','3.jpg'],
+    msrp: 10.99,
+    wholesale: 6.99,
+    category: 'sports',
+    stock: 300
+},
+{
+    sku: '00003',
+    name: 'Product 3',
+    description: 'Description of product 3',
+    photos: ['1.jpg','2.jpg','3.jpg'],
+    msrp: 10.99,
+    wholesale: 6.99,
+    category: 'electronics',
+    stock: 300
+},
+{
+    sku: '00004',
+    name: 'Product 4',
+    description: 'Description of product 4',
+    photos: ['1.jpg','2.jpg','3.jpg'],
+    msrp: 10.99,
+    wholesale: 6.99,
+    category: 'electronics',
+    stock: 300
+}])
