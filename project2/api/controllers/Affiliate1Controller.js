@@ -79,7 +79,7 @@ module.exports = {
 
                   response.on('end', function(){
                     try {
-
+                        console.log(responseData);
                       res.view({details: responseData, prices: res1});
                     // res.send({prices: res1, stock: responseData});
                         // callback(null, res1, responseData);
