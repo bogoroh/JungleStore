@@ -42,12 +42,18 @@ module.exports.routes = {
         controller: 'DistroController',
         action: 'index'
     },
+    '/distro/json/:key': {
+        controller: 'DistroController',
+        action: 'json'
+    },
     '/affiliate1': {
-        view: 'affiliate1/index'
+        controller: 'Affiliate1Controller',
+        action: 'index'
 
     },
     '/affiliate2': {
-        view: 'affiliate2/index'
+        controller: 'Affiliate2Controller',
+        action: 'index'
     }
 
   /*

@@ -16,7 +16,25 @@
 <div class="container clearfix">
     <div class="main">
         <h1 id="main-title"><%= __('Welcome') %></h1>
-        <h2>Affiliate Site 2 Route</h2>
+        <h2>Affiliate Route 2</h2>
+
+
+        <% for(var i=0; i<details.length; i++) {%>
+           <p>
+
+
+                store price: <%= prices[i].price %><br>
+
+                sku: <%= details[i].sku %><br>
+                product: <%= details[i].name %><br>
+                msrp: <%= details[i].msrp %><br>
+                wholesale: <%= details[i].wholesale %><br>
+                category: <%= details[i].category %><br>
+                stock: <%= details[i].stock %>
+            </p>
+
+        <% } %>
+
 
     </div>
     <div class="side-bar">

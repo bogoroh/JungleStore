@@ -18,13 +18,28 @@
 module.exports = {
     index: function (req, res) {
         Distro.find().done(function(err, usr) {
-        if (err) {
-            res.send(500, { error: "DB Error" });
-        } else {
-            console.log(usr)
-            res.view({skus: usr})
-        }
-    });
+            if (err) {
+                res.send(500, { error: "DB Error" });
+            } else {
+                console.log(usr)
+                res.view({skus: usr})
+            }
+        });
     // res.send("this");
+    },
+    json: function (req, res) {
+        var key = req.param('key');
+        // console.log(key);
+        var keys = key.split(",");
+        // console.log(keys);
+        Distro.find({sku: keys}).done(function(err, usr) {
+            if (err) {
+                res.send(500, { error: "DB Error" });
+            } else {
+                // console.log(usr);
+                return res.json(usr);
+            }
+        });
+
     }
 };
