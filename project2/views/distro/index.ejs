@@ -18,6 +18,29 @@
         <h1 id="main-title"><%= __('Welcome') %></h1>
         <h2>Distribution Route</h2>
 
+        <table>
+            <tr>
+                <th>sku</th>
+                <th>name</th>
+                <th>msrp</th>
+                <th>wholesale</th>
+                <th>category</th>
+                <th>stock</th>
+            </tr>
+
+        <% for(var i=0; i<skus.length; i++) {%>
+           <tr>
+            <td><%= skus[i].sku %></td>
+            <td><%= skus[i].name %></td>
+            <td><%= skus[i].msrp %></td>
+            <td><%= skus[i].wholesale %></td>
+            <td><%= skus[i].category %></td>
+            <td><%= skus[i].stock %></td>
+
+            </tr>
+        <% } %>
+        </table>
+
     </div>
     <div class="side-bar">
         <h4 id="new">
