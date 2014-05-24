@@ -1,0 +1,45 @@
+<!-- Default home page -->
+<link type="text/css" href='/styles/affiliate1style.css' rel='stylesheet'/>
+
+<!--[if IE 7]>
+    <style>
+    .getting-started li{overflow:visible;clear:both}.delete{width:690px}
+    </style>
+<![endif]-->
+
+
+<div class="container clearfix">
+    <div class="main">
+
+        <h1>Affiliate 2</h1>
+        <% include nav %>
+
+
+
+           <p>
+
+                store price: <%= prices.price %><br>
+
+
+                sku: <%= details.sku %><br>
+                product: <%= details.name %><br>
+                msrp: <%= details.msrp %><br>
+                wholesale: <%= details.wholesale %><br>
+                category: <%= details.category %><br>
+                stock: <%= details.stock %><br>
+                <% for(var j=0; j<details.photos.length; j++) {%>
+                   <img src="/images/<%= details.photos[j] %>">
+                <% } %>
+
+
+
+            </p>
+
+
+
+
+
+
+    </div>
+
+</div>

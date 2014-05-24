@@ -37,6 +37,13 @@ module.exports.routes = {
     '/': {
         view:'home/index'
     },
+    '/distro/login':{
+        view:'distro/login'
+    },
+    '/distro/logincheck':{
+        controller: "UserController",
+        action: 'login',
+    },
     '/distro': {
         controller: 'DistroController',
         action: 'index'
@@ -48,15 +55,33 @@ module.exports.routes = {
     '/affiliate1': {
         controller: 'Affiliate1Controller',
         action: 'index'
-
+    },
+    '/affiliate1/:category': {
+        controller: 'Affiliate1Controller',
+        action: 'category'
+    },
+    '/affiliate1/product/:sku': {
+        controller: 'Affiliate1Controller',
+        action: 'product'
     },
 
     '/affiliate2': {
         controller: 'Affiliate2Controller',
         action: 'index'
     },
+<<<<<<< HEAD
 
     'post /addcart': 'CartController.addItem'
+=======
+    '/affiliate2/:category': {
+        controller: 'Affiliate2Controller',
+        action: 'category'
+    },
+    '/affiliate2/product/:sku': {
+        controller: 'Affiliate2Controller',
+        action: 'product'
+    }
+>>>>>>> FETCH_HEAD
 
   /*
   // But what if you want your home page to display

@@ -2,11 +2,16 @@
 --fields sku, name, description, photos, msrp, wholesale, category, stock, id
 
 
+db.affiliate1.remove({})
+db.affiliate2.remove({})
+
+db.affiliate1.save([{sku: '00001', category: 'sports', price: 18.99},{sku: '00002', category: 'sports', price: 33.99},{sku: '00003', category: 'electronics', price: 21.99} ])
+
+db.affiliate2.save([{sku: '00002', category: 'sports', price: 3.99},{sku: '00004', category: 'electronics', price: 15.99}])
 
 
-db.affiliate1.save([{sku: '00001', price: 18.99},{sku: '00002', price: 33.99},{sku: '00003', price: 21.99} ])
-
-db.affiliate2.save([{sku: '00002', price: 3.99},{sku: '00004', price: 15.99}])
+db.admin.save({"username":"admin","password":"password" })
+db.admin.save({"username":"jungle","password":"pass" })
 
 
 db.distrokeys.save([

@@ -1,0 +1,75 @@
+Group Project : JungleStore
+ASL1405
+
+Project Overview
+The Jungle Distribution Service, and affiliate sites is a multi-site project that serves to keep track of the inventory and details of the items stored by the distribution service, and display the products for sale at the affiliate sites.
+
+The project will use Sails as the framework, which is written in node.js. All sites will use mongodb for their data, all contained within one database but divided into each site's respective collection(s). The affiliate sites will allow a user to add products they sell to a shopping cart,  view the cart, and remove and update items from it.
+
+
+Project Detail
+JungleStore's main purpose is to warehouse products for companies that do not want to store their own products. Additionally, JungleStore can serve as a distribution service for third-party companies who wish to sell items in JungleStore's warehouse.
+
+JungleStore is meant for companies who want to sell either their own products on the internet without having to store their products locally, or want a more convenient product distribution system.
+
+JungleStore is similar to Amazon in the sense that it can store products for third-parties and deliver them. However, JungleStore is dedicated to serving as a distribution network, instead of maintaining its own online store presence.
+
+
+Version 1 Features -
+- view all stock in the distribution site
+- log in and out of the distribution site (only authorized users can view the data)
+- display products relevant to each affiliate site
+- display products on affiliate sites based on category
+- display details for a selected product
+- view additional photos for a product on its details page
+- add to / remove from / update quantity / view : shopping cart
+
+Version 2 Features -
+- lightbox for additional product photos
+- add / update / remove products from distribution site
+- save shopping cart for later
+- user accounts for affiliate pages
+Project Timeline
+    Day 0
+        - Select Framework
+        - Brainstorm content needs
+        - Install framework
+        - Wireframes
+    Day 1
+        - Add database access to framework
+        - Basic routing
+        - Sample data
+    Day 2
+        - API access to distribution data
+        - Distribution site authentication
+        - Products and photos for distribution database
+        - Submit PRD document
+    Day 3
+        - Full routing for sites
+    Day 4
+        - Shopping cart
+    Day 5
+        - (National Holiday)
+    Day 6
+        - CSS
+    Day 7
+        - Interactive elements
+    Day 8
+        - Debug and test
+
+Site Structure
+    /distro
+    /distro/login
+
+    /affiliate1
+    /affiliate1/:category
+    /affiliate1/:category/:productsku
+
+   /affiliate2
+    /affiliate2/:category
+    /affiliate2/:category/:productsku
+
+
+
+Link to Repo
+https://github.com/bogoroh/JungleStore
