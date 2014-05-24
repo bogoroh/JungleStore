@@ -18,7 +18,7 @@
 module.exports = {
 
   login: function (req, res) {
-  	console.log("Hi")
+  	res.send("Hi")
   }
 
   // logout: function(req, res) {
