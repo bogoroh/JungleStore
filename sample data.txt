@@ -2,7 +2,8 @@
 --fields sku, name, description, photos, msrp, wholesale, category, stock, id
 
 
-
+db.affiliate1.remove({})
+db.affiliate2.remove({})
 
 db.affiliate1.save([{sku: '00001', category: 'sports', price: 18.99},{sku: '00002', category: 'sports', price: 33.99},{sku: '00003', category: 'electronics', price: 21.99} ])
 
