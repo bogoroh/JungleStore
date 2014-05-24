@@ -22,6 +22,7 @@ module.exports = {
 // Affiliate 1 API key 3CF3C254C4333EF75342F19BE3B8CEEF
         var path = "/distro/json/3CF3C254C4333EF75342F19BE3B8CEEF/";
 
+
 // using the async package, do a waterfall style db query
 // the results of the first query can be passed to the next
 
@@ -97,4 +98,5 @@ module.exports = {
         ]);
 
     }
+
 }

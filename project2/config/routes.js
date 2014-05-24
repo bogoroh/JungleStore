@@ -50,10 +50,13 @@ module.exports.routes = {
         action: 'index'
 
     },
+
     '/affiliate2': {
         controller: 'Affiliate2Controller',
         action: 'index'
-    }
+    },
+
+    'post /addcart': 'CartController.addItem'
 
   /*
   // But what if you want your home page to display
