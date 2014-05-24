@@ -60,7 +60,7 @@ module.exports.routes = {
         controller: 'Affiliate1Controller',
         action: 'category'
     },
-    '/affiliate1/:category/:sku': {
+    '/affiliate1/product/:sku': {
         controller: 'Affiliate1Controller',
         action: 'product'
     },
@@ -72,7 +72,7 @@ module.exports.routes = {
         controller: 'Affiliate2Controller',
         action: 'category'
     },
-    '/affiliate2/:category/:sku': {
+    '/affiliate2/product/:sku': {
         controller: 'Affiliate2Controller',
         action: 'product'
     }
