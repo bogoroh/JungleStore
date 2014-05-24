@@ -55,11 +55,26 @@ module.exports.routes = {
     '/affiliate1': {
         controller: 'Affiliate1Controller',
         action: 'index'
-
+    },
+    '/affiliate1/:category': {
+        controller: 'Affiliate1Controller',
+        action: 'category'
+    },
+    '/affiliate1/:category/:sku': {
+        controller: 'Affiliate1Controller',
+        action: 'product'
     },
     '/affiliate2': {
         controller: 'Affiliate2Controller',
         action: 'index'
+    },
+    '/affiliate2/:category': {
+        controller: 'Affiliate2Controller',
+        action: 'category'
+    },
+    '/affiliate2/:category/:sku': {
+        controller: 'Affiliate2Controller',
+        action: 'product'
     }
 
   /*

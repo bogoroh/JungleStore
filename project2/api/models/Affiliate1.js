@@ -13,6 +13,7 @@ module.exports = {
             type: 'INTEGER',
             unique: true
         },
+        category: 'STRING',
         price: 'FLOAT'
     }
 
