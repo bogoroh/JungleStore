@@ -18,7 +18,9 @@
 module.exports = {
 
   login: function (req, res) {
-  	res.send("Hi")
+  	res.send(req.body.username)
+  	var foo = req.param('username');
+  	console.log(req.body.username);
   }
 
   // logout: function(req, res) {
