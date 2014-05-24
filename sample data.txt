@@ -9,8 +9,8 @@ db.affiliate1.save([{sku: '00001', category: 'sports', price: 18.99},{sku: '0000
 db.affiliate2.save([{sku: '00002', category: 'sports', price: 3.99},{sku: '00004', category: 'electronics', price: 15.99}])
 
 
-db.admin.save({"Username":"admin","password":"password" })
-db.admin.save({"Username":"jungle","password":"pass" })
+db.admin.save({"username":"admin","password":"password" })
+db.admin.save({"username":"jungle","password":"pass" })
 
 
 db.distrokeys.save([

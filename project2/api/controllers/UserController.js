@@ -18,9 +18,19 @@
 module.exports = {
 
   login: function (req, res) {
-  	res.send(req.body.username)
-  	var foo = req.param('username');
-  	console.log(req.body.username);
+  	Admin.findOne({username:req.param('username'),password:req.param("password")}).done(function(err, result){
+		if(!!result){
+			req.session.user = {}
+			req.session.user.username = result.username
+			req.session.user.password = result.password
+			res.redirect("/distro")
+			console.log(req.session.user)
+		}else {
+			console.log(req.param("password"))
+			console.log(req.param('username'))
+			console.log("I'm hungry")
+		}
+	})
   }
 
   // logout: function(req, res) {
