@@ -69,10 +69,13 @@ module.exports.routes = {
         controller: 'Affiliate2Controller',
         action: 'index'
     },
-<<<<<<< HEAD
 
-    'post /addcart': 'CartController.addItem'
-=======
+//
+    'post /affiliate2/addcart': {
+        controller: 'CartController.addItem'
+    },
+//
+
     '/affiliate2/:category': {
         controller: 'Affiliate2Controller',
         action: 'category'
@@ -81,7 +84,7 @@ module.exports.routes = {
         controller: 'Affiliate2Controller',
         action: 'product'
     }
->>>>>>> FETCH_HEAD
+
 
   /*
   // But what if you want your home page to display

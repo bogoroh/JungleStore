@@ -17,6 +17,20 @@
 
 module.exports = {
     index: function (req, res) {
+// #############################################
+// #############################################
+// This is how we get a session variable back. Specifically the session variable named 'test'.
+// 'test' was set as a session variable on Affiliate1Controller using the same syntax but setting it to the value "TEST SOURCE AFFILIATE1"
+// #############################################
+// #############################################
+
+        console.log(req.session.test);
+
+
+// reading back the suggested shopping cart usage, the session variable (stored as JSON), would need to be parsed back with JSON.parse(), then it can be processed by tallying up the total quantity of items, and total cost by (qty1 * price1) + (qty2 * price2) ...
+        console.log(JSON.parse(req.session.affiliate1ShoppingCart));
+
+
 
 // set up the base path of the distro API
 // Affiliate 2 API key   994D49B55DB0748324BB4A6366197730
@@ -180,7 +194,7 @@ module.exports = {
 
     },
     product: function (req, res) {
-
+        console.log("HERE")
         var path = "/distro/json/994D49B55DB0748324BB4A6366197730/";
         var productsku = req.param('sku');
 

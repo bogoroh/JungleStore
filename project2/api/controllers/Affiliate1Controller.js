@@ -18,6 +18,30 @@
 
 module.exports = {
     index: function (req, res) {
+
+// #############################################
+// #############################################
+// This is how we set a session variable. The basic syntax is req.session .  In this instance, it is being set to the variable named 'test', and are storing the value "TEST SOURCE AFFILIATE1" to it. To demonstrate how it is being retrieved back from the server, the variable is being read on a different route.
+
+// So, to set this variable, you would view the page at /affiliate1.  Then to read it back, view the page at /affiliate2.  The result will be in the terminal window.  When you view the second page (/affiliate2), you will see TEST SOURCE AFFILIATE1 in the terminal window.
+// #############################################
+// #############################################
+
+        req.session.test = "TEST SOURCE AFFILIATE1";
+
+
+
+// suggestion for the shopping cart. The products being bought would be stored as an array of objects, and when the session variable is stored for later, store it as a JSON entry by using JSON.stringify().
+
+        req.session.affiliate1ShoppingCart = JSON.stringify([ { sku: '00001', name: 'Product 1', price: 5.99, quantity: 1 }, { sku: '00002', name: 'Product 2', price: 9.99, quantity: 2 } ]); // suggested use
+
+
+
+
+        // req.session.affiliate2ShoppingCart = []; // suggested use
+
+
+
     // set up the base path of the distro API
     // Affiliate 1 API key 3CF3C254C4333EF75342F19BE3B8CEEF
         var path = "/distro/json/3CF3C254C4333EF75342F19BE3B8CEEF/";
