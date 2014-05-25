@@ -44,6 +44,10 @@ module.exports.routes = {
         controller: "UserController",
         action: 'login',
     },
+    '/distro/logout':{
+      controller: "UserController",
+      action: "logout"
+    },
     '/distro': {
         controller: 'DistroController',
         action: 'index'

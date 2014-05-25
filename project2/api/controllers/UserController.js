@@ -17,25 +17,27 @@
 
 module.exports = {
 
-  login: function (req, res) {
-  	Admin.findOne({username:req.param('username'),password:req.param("password")}).done(function(err, result){
-		if(!!result){
-			req.session.user = {}
-			req.session.user.username = result.username
-			req.session.user.password = result.password
-			res.redirect("/distro")
-			console.log(req.session.user)
-		}else {
-			console.log(req.param("password"))
-			console.log(req.param('username'))
-			console.log("I'm hungry")
-		}
-	})
-  }
+	login: function (req, res) {
+		Admin.findOne({username:req.param('username'),password:req.param("password")}).done(function(err, result){
+			if(!!result){
+				req.session.user = {}
+				req.session.user.username = result.username
+				req.session.user.password = result.password
+				req.session.user.authenticated = true
+				res.redirect("/distro")
+				console.log(req.session.user)
+			}else {
+				console.log(req.param("password"))
+				console.log(req.param('username'))
+				console.log("I'm hungry")
+			}
+		})
+	},
 
-  // logout: function(req, res) {
-  //   req.session.user = null;
-  //   res.send("Successfully logged out");
-  // }
-  
+	logout: function(req, res) {
+		req.session.user.authenticated = false;
+		console.log(req.session.user)
+		res.send("Successfully logged out");
+	}
+
 };
