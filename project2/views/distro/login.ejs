@@ -3,7 +3,7 @@
 <%- req.flash('session') %>
 <%- req.flash('logout') %>
 <form method="POST" action="/distro/logincheck">
-	<input type="text" name="username">
+	<input type="text" name="username" autofocus>
 	<input type="password" name="password">
 	<input type="submit" value="Submit">
 </form>
