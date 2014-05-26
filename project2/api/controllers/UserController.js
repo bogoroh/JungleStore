@@ -23,7 +23,6 @@ module.exports = {
 				req.session.user = {}
 				req.session.user.username = result.username
 				req.session.user.password = result.password
-				req.session.user.authenticated = true
 				res.redirect("/distro")
 				console.log(req.session.user)
 			} else {
@@ -34,20 +33,17 @@ module.exports = {
 	},
 
 	logout: function(req, res) {
-		req.session.user.authenticated = false;
+		req.session.user = false;
 		console.log(req.session.user)
-		res.send("Successfully logged out");
+		req.flash('logout','Succesfully logged out');
+		res.redirect('/distro/login')
 	},
 
 	signup: function(req, res) {
 		Admin.findOne({username:req.param('username')}).done(function(err, result) {
 			if(!result) {
-				console.log(result)
-					Admin.create({username:req.param('username'), password:req.param('password')}).exec(function(err,result){	
-					// sets session variables
-					req.session.user = {}
+				Admin.create({username:req.param('username'), password:req.param('password')}).exec(function(err,result){	
 					req.session.user = result;
-					req.session.user.authenticated = true;
 					console.log("user added");
 					res.redirect('/distro');
 				});

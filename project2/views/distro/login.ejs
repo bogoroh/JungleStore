@@ -1,5 +1,7 @@
 <h1>This will be the login</h1>
 <%- req.flash('incorrect') %>
+<%- req.flash('session') %>
+<%- req.flash('logout') %>
 <form method="POST" action="/distro/logincheck">
 	<input type="text" name="username">
 	<input type="password" name="password">

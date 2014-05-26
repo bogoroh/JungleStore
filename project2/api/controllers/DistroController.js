@@ -18,14 +18,19 @@
 module.exports = {
 
     index: function (req, res) {
-        Distro.find().done(function(err, usr) {
-            if (err) {
-                res.send(500, { error: "DB Error" });
-            } else {
-                console.log(usr)
-                res.view({skus: usr})
-            }
-        });
+        if (!!req.session.user ){
+            Distro.find().done(function(err, usr) {
+                if (err) {
+                    res.send(500, { error: "DB Error" });
+                } else {
+                    console.log(usr)
+                    res.view({skus: usr})
+                }
+            });
+        }else {
+            req.flash('session','Session has been timed out');
+            res.redirect("/distro/login")
+        }
     // res.send("this");
     },
     json: function (req, res) {
