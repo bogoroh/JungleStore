@@ -27,9 +27,8 @@ module.exports = {
 				res.redirect("/distro")
 				console.log(req.session.user)
 			} else {
-				console.log(req.param("password"))
-				console.log(req.param('username'))
-				// Err0r message and redirects comes here.
+				req.flash('incorrect','Incorrect password or username');
+				res.redirect("/distro/login")
 			}
 		})
 	},
