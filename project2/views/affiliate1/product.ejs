@@ -28,7 +28,7 @@
                 category: <%= details.category %><br>
                 stock: <%= details.stock %><br>
                 <% for(var j=0; j<details.photos.length; j++) {%>
-                <a href="/images/<%= details.photos[j] %>" data-lightbox="productImages">Preview Sized Will Need To Go Here</a>
+                <a href="/images/<%= details.photos[j] %>" data-lightbox="productImages"><img src="/images/<%= details.photos[j] %>"></a>
 
                 <% } %>
 
