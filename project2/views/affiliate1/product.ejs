@@ -26,9 +26,10 @@
                 msrp: <%= details.msrp %><br>
                 wholesale: <%= details.wholesale %><br>
                 category: <%= details.category %><br>
-                stock: <%= details.stock %><br>                
+                stock: <%= details.stock %><br>
                 <% for(var j=0; j<details.photos.length; j++) {%>
-                   <img src="/images/<%= details.photos[j] %>">
+                <a href="/images/<%= details.photos[j] %>" data-lightbox="productImages">Preview Sized Will Need To Go Here</a>
+
                 <% } %>
 
 

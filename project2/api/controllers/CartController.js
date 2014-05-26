@@ -16,7 +16,7 @@
  */
 
 module.exports = {
-    
+
     addItem: function(req,res,next) {
     	var item = req.item.all();
 
@@ -27,7 +27,7 @@ module.exports = {
     		res.json(cart);
     	})
 
-    }
+    },
 
     cartItems: function(req,rex,next) {
     	var sku = req.item('sku');
@@ -47,17 +47,17 @@ module.exports = {
     			res.json(cart);
     		});
     	}else{
-    		var 
+    		// var
     	}
     }
-  
+
 
 
   /**
    * Overrides for the settings in `config/controllers.js`
    * (specific to CartController)
    */
- 
 
-  
+
+
 };
