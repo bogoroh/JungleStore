@@ -29,7 +29,7 @@ module.exports = {
 			}else {
 				console.log(req.param("password"))
 				console.log(req.param('username'))
-				console.log("I'm hungry")
+				// Err0r message and redirects comes here.
 			}
 		})
 	},
