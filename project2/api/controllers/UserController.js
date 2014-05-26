@@ -50,7 +50,7 @@ module.exports = {
 				console.log("user added");
 				res.redirect('/distro');
 			} else {
-				console.log("user already exists");
+				req.flash('exist','User already exists');
 				res.redirect('/distro/signup');
 			}
 		})
