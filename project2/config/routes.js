@@ -40,9 +40,16 @@ module.exports.routes = {
     '/distro/login':{
         view:'distro/login'
     },
+    '/distro/signup':{
+        view:'distro/signup'
+    },
     '/distro/logincheck':{
         controller: "UserController",
-        action: 'login',
+        action: 'login'
+    },
+    '/distro/signupcheck':{
+        controller: "UserController",
+        action: 'signup'
     },
     '/distro/logout':{
       controller: "UserController",

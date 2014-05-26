@@ -26,7 +26,7 @@ module.exports = {
 				req.session.user.authenticated = true
 				res.redirect("/distro")
 				console.log(req.session.user)
-			}else {
+			} else {
 				console.log(req.param("password"))
 				console.log(req.param('username'))
 				// Err0r message and redirects comes here.
@@ -38,6 +38,22 @@ module.exports = {
 		req.session.user.authenticated = false;
 		console.log(req.session.user)
 		res.send("Successfully logged out");
-	}
+	},
 
+	signup: function(req, res) {
+		Admin.findOne({username:req.param('username')}).done(function(err, successs) {
+			if(!successs) {
+				Admin.save({username:req.param('username'), password:req.param('password')});
+
+				// sets session variables
+				req.session.user = successs;
+				req.session.user.authenticated = true;
+				console.log("user added");
+				res.redirect('/distro');
+			} else {
+				console.log("user already exists");
+				res.redirect('/distro/signup');
+			}
+		})
+	}
 };
