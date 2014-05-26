@@ -17,16 +17,38 @@
 
 module.exports = {
     
-    addItem: function(req,res, next) {
+    addItem: function(req,res,next) {
     	var item = req.item.all();
 
-    	Cart.addItem(item, function(err,sleep){
+    	Cart.addItem(item, function(err,cart){
     		if (err) return next(err);
 
     		res.status(201);
     		res.json(cart);
     	})
 
+    }
+
+    cartItems: function(req,rex,next) {
+    	var sku = req.item('sku');
+
+    	var skuShortCut = isShortCut(sku);
+
+    	if(skuShortCut === true){
+    		return next();
+    	}
+
+    	if(sku){
+    		Cart.findOne(sku, function(err, cart){
+    			if(cart === undefined) return res.notFound();
+
+    			if(err) return next(err);
+
+    			res.json(cart);
+    		});
+    	}else{
+    		var 
+    	}
     }
   
 
