@@ -40,15 +40,18 @@ module.exports = {
 	},
 
 	signup: function(req, res) {
-		Admin.findOne({username:req.param('username')}).done(function(err, successs) {
-			if(!successs) {
-				Admin.save({username:req.param('username'), password:req.param('password')});
+		Admin.findOne({username:req.param('username')}).done(function(err, result) {
+			if(!result) {
+				console.log(result)
+					Admin.create({username:req.param('username'), password:req.param('password')}).exec(function(err,result){	
+					// sets session variables
+					req.session.user = {}
+					req.session.user = result;
+					req.session.user.authenticated = true;
+					console.log("user added");
+					res.redirect('/distro');
+				});
 
-				// sets session variables
-				req.session.user = successs;
-				req.session.user.authenticated = true;
-				console.log("user added");
-				res.redirect('/distro');
 			} else {
 				req.flash('exist','User already exists');
 				res.redirect('/distro/signup');
