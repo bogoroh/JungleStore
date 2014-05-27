@@ -81,11 +81,12 @@ module.exports.routes = {
         action: 'index'
     },
 
-//
-    'post /affiliate2/addcart': {
-        controller: 'CartController.addItem'
+
+    'post /affiliate1/addcart': {
+        controller: 'Affiliate1Controller',
+        action: 'addItem'
     },
-//
+
 
     '/affiliate2/:category': {
         controller: 'Affiliate2Controller',

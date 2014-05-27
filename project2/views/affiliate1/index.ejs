@@ -16,7 +16,7 @@
 
         <% for(var i=0; i<details.length; i++) {%>
 
-           	<form action="/addcart?sku=<%= details[i].sku %>&price=<%= prices[i].price %>&name=<%= details[i].name %>" method="POST">
+           	<form action="/affiliate1/addcart?sku=<%= details[i].sku %>&price=<%= prices[i].price %>&name=<%= details[i].name %>" method="POST">
                 
                 <p>Store Price:</p><p name="price"><%= prices[i].price %></p>
                 <p>SKU: </p><p name="sku"><%= details[i].sku %></p>

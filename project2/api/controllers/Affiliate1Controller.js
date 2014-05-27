@@ -15,7 +15,6 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
-
 module.exports = {
     index: function (req, res) {
 
@@ -32,6 +31,8 @@ module.exports = {
 
 
 // suggestion for the shopping cart. The products being bought would be stored as an array of objects, and when the session variable is stored for later, store it as a JSON entry by using JSON.stringify().
+		
+		req.session.affiliate1cart = [];
 
         req.session.affiliate1ShoppingCart = JSON.stringify([ { sku: '00001', name: 'Product 1', price: 5.99, quantity: 1 }, { sku: '00002', name: 'Product 2', price: 9.99, quantity: 2 } ]); // suggested use
 
@@ -278,6 +279,25 @@ module.exports = {
             }
         ]);
 
+    },
+
+
+    addItem: function(res,req){
+
+    	var sku = req.param('sku');
+
+    		//var cartItem = {
+    	//	sku : require.param('sku'),
+    	//	name : require.param('name'),
+    	//	price : require.param('price'),
+    	//	qty : 1
+    	//};
+
+    //	req.session.affiliate1cart.push(cartItem);		req.session.affiliate1cart
+
+		console.log(sku);
+
+		//res.redirect();
     }
 
 }
