@@ -25,4 +25,4 @@ Products include:
 
 
 
-For each product there is a large and a small picture so we can use a query plugin like lightbox, or fancybox 2
+For each product there is a large and a small picture so we can use a jquery plugin like lightbox, or fancybox 2
