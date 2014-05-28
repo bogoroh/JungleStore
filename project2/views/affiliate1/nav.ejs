@@ -2,9 +2,9 @@
 This is an example of including the navigation, so, define it once, use it many times.
 
 <ul>
-    <li>Nav1</li>
-    <li>Nav2</li>
-    <li>Nav3</li>
+    <% for(var i=0; i<categories.length; i++) {%>
+       <li><a href="/affiliate1/<%= categories[i].category %>"><%=: categories[i].category|capitalize %></a></li>
+    <% } %>
 </ul>
 
 The same thing can be done for any menus, footers, headers, etc.
