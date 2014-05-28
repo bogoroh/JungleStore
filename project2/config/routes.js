@@ -67,24 +67,39 @@ module.exports.routes = {
         controller: 'Affiliate1Controller',
         action: 'index'
     },
-    '/affiliate1/:category': {
+
+    'post /affiliate1/addcart': {
         controller: 'Affiliate1Controller',
-        action: 'category'
+        action: 'additem'
     },
+
+    'get /affiliate1/addcart': {
+        controller: 'Affiliate1Controller',
+        action: 'viewcart'
+    },
+
     '/affiliate1/product/:sku': {
         controller: 'Affiliate1Controller',
         action: 'product'
     },
 
-    '/affiliate2': {
-        controller: 'Affiliate2Controller',
-        action: 'index'
+    '/affiliate1/:category': {
+        controller: 'Affiliate1Controller',
+        action: 'category'
     },
 
 
+<<<<<<< HEAD
     'post /affiliate1/addcart/:sku/:price/:name': {
         controller: 'Affiliate1Controller',
         action: 'addItem'
+=======
+
+
+    '/affiliate2': {
+        controller: 'Affiliate2Controller',
+        action: 'index'
+>>>>>>> FETCH_HEAD
     },
 
 

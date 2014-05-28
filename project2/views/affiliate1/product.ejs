@@ -8,39 +8,40 @@
 <![endif]-->
 
 
-<div class="container clearfix">
-    <div class="main">
+<div class="container">
 
-        <h1>Affiliate 1</h1>
+        <% include header %>
         <% include nav %>
 
+<div>
+    <span class="breadcrumbs"> &gt;
+        <a href="/affiliate1/<%= details.category %>"> <%= details.category %></a> &gt;
+        <%= details.name %>
+    </span>
+
+    <form data-sku="<%= details.sku %>" data-price="<%= prices.price %>">
+
+        <h3><%= details.name %></h3>
+         <a href="/images/<%= details.photos[0] %>" data-lightbox="productImages"><img src="/images/<%= details.photos[0] %>"></a>
+        <p><%= details.description %></p>
+
+         <p>msrp: <span class="strikethrough right">$<%= details.msrp %></span></p>
+         <p>Our price: <span name="price" class="right">$<%= prices.price %></span></p>
+
+        <p>    <!-- category: <%= details.category %><br> -->
+            <%= details.stock %> in stock<br>
+            <button type="submit" class="addToCart right">Add To Cart</button>
+        </p>
+        <p class="otherImages">
+            <% for(var j=1; j<details.photos.length; j++) {%>
+            <a href="/images/<%= details.photos[j] %>" data-lightbox="productImages"><img src="/images/<%= details.photos[j] %>"></a>
+
+            <% } %>
+        </p>
 
 
-           <p>
+    </form>
+</div>
 
-                store price: <%= prices.price %><br>
-
-
-                sku: <%= details.sku %><br>
-                product: <%= details.name %><br>
-                msrp: <%= details.msrp %><br>
-                wholesale: <%= details.wholesale %><br>
-                category: <%= details.category %><br>
-                stock: <%= details.stock %><br>
-                <% for(var j=0; j<details.photos.length; j++) {%>
-                <a href="/images/<%= details.photos[j] %>" data-lightbox="productImages"><img src="/images/<%= details.photos[j] %>"></a>
-
-                <% } %>
-
-
-
-            </p>
-
-
-
-
-
-
-    </div>
 
 </div>

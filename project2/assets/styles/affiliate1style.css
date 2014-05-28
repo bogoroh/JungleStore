@@ -1,3 +1,68 @@
+@font-face{
+	font-family: 'Source Serif Pro';
+	src: url('sourceserifpro-regular.eot');
+	src: url('sourceserifpro-regular.eot?#iefix') format('embedded-opentype'),
+	     url('sourceserifpro-regular.woff') format('woff'),
+	     url('sourceserifpro-regular.ttf') format('truetype'),
+	     url('sourceserifpro-regular.svg#webfont') format('svg');
+}
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
 body {
-    background: teal;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+header {
+	position: relative;
+	background: #63b3f5;
+	padding: 20px;
+}
+header .right {
+	position: absolute;
+	height: 20px;
+	margin: auto;
+	top: 0;
+	left: 85%;
+	bottom: 0;
+
+}
+h1 {
+    font-family: 'Source Serif Pro', serif;
+	margin: 0;
+}
+h1 a {
+	text-decoration: none;
+	color: #fff;
+}
+.product {
+	width: 150px;
+	float: left;
+	margin: 40px;
+}
+.product form {
+	position: relative;
+}
+.product .right {
+	position: absolute;
+	right: 0;
+}
+button.addToCart {
+	border-radius: 90px;
+	background: #f2dd54;
+	padding: 5px 8px;
+	outline: none;
+}
+.productImage {
+	width: 100%;
+}
+.strikethrough {
+	text-decoration: line-through;
+}
+
+.otherImages img {
+	width: 75px;
 }

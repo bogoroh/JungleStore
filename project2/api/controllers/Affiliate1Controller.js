@@ -26,18 +26,17 @@ module.exports = {
 // #############################################
 // #############################################
 
-        req.session.test = "TEST SOURCE AFFILIATE1";
+        // req.session.test = "TEST SOURCE AFFILIATE1";
 
 
 
 // suggestion for the shopping cart. The products being bought would be stored as an array of objects, and when the session variable is stored for later, store it as a JSON entry by using JSON.stringify().
-		
-		req.session.affiliate1cart = [];
 
-        req.session.affiliate1ShoppingCart = JSON.stringify([ { sku: '00001', name: 'Product 1', price: 5.99, quantity: 1 }, { sku: '00002', name: 'Product 2', price: 9.99, quantity: 2 } ]); // suggested use
+		// req.session.affiliate1cart = [];
 
+        // req.session.affiliate1ShoppingCart = JSON.stringify([ { sku: '00001', name: 'Product 1', price: 5.99, quantity: 1 }, { sku: '00002', name: 'Product 2', price: 9.99, quantity: 2 } ]);
 
-
+        // suggested use
 
         // req.session.affiliate2ShoppingCart = []; // suggested use
 
@@ -67,6 +66,18 @@ module.exports = {
                 });
             },
             function(res1, callback){
+                Affiliate1.find({ groupBy: [ 'category' ], sum: [ 'price' ] })
+                .done(function(err, usr) {
+                    if (err) {
+                        res.send(500, { error: "DB Error" });
+                    } else {
+
+                        // console.log(usr)
+                        callback(null, res1, usr);
+                    }
+                });
+            },
+            function(res1, res2, callback){
                 // console.log(res1)
     // the second query gets all skus from the results of the first query, and builds out the rest of the API url
 
@@ -74,6 +85,12 @@ module.exports = {
                     path += res1[i].sku + ((i < (max-1)) ? "," : "");
                 }
 
+                var categories = []
+                for(var i=0, max = res2.length; i < max; i++){
+                    categories.push({'category': res2[i].category});
+                }
+
+                console.log(categories);
                 // console.log(path);
 
     // API url will look like   /distro/json/00001,00002,00003
@@ -105,7 +122,8 @@ module.exports = {
                   response.on('end', function(){
                     try {
                         console.log(responseData);
-                      res.view({details: responseData, prices: res1});
+                        catPage = {}
+                      res.view({details: responseData, prices: res1, categories: categories, catPage: catPage});
                     // res.send({prices: res1, stock: responseData});
                         // callback(null, res1, responseData);
                     } catch (e) {
@@ -150,6 +168,18 @@ module.exports = {
                 });
             },
             function(res1, callback){
+                Affiliate1.find({ groupBy: [ 'category' ], sum: [ 'price' ] })
+                .done(function(err, usr) {
+                    if (err) {
+                        res.send(500, { error: "DB Error" });
+                    } else {
+
+                        // console.log(usr)
+                        callback(null, res1, usr);
+                    }
+                });
+            },
+            function(res1, res2, callback){
                 // console.log(res1)
 // the second query gets all skus from the results of the first query, and builds out the rest of the API url
 
@@ -157,6 +187,11 @@ module.exports = {
                     path += res1[i].sku + ((i < (max-1)) ? "," : "");
                 }
 
+
+                var categories = []
+                for(var i=0, max = res2.length; i < max; i++){
+                    categories.push({'category': res2[i].category});
+                }
                 console.log(path);
 
 // API url will look like   /distro/json/00001,00002,00003
@@ -187,8 +222,10 @@ module.exports = {
 
                   response.on('end', function(){
                     try {
-                        console.log(responseData);
-                      res.view('affiliate1/index', {details: responseData, prices: res1});
+                        // console.log(responseData);
+                        // console.log("category" + category);
+                        catPage = {'category': category}
+                      res.view('affiliate1/index', {details: responseData, prices: res1, categories: categories, catPage: catPage});
                     // res.send({prices: res1, stock: responseData});
                         // callback(null, res1, responseData);
                     } catch (e) {
@@ -225,14 +262,32 @@ module.exports = {
                 });
             },
             function(res1, callback){
-                // console.log(res1)
+                Affiliate1.find({ groupBy: [ 'category' ], sum: [ 'price' ] })
+                .done(function(err, usr) {
+                    if (err) {
+                        res.send(500, { error: "DB Error" });
+                    } else {
+
+                        // console.log(usr)
+                        callback(null, res1, usr);
+                    }
+                });
+            },
+            function(res1, res2, callback){
+                console.log(res1)
 // the second query gets all skus from the results of the first query, and builds out the rest of the API url
 
 
-                    path += res1.sku;
+                path += res1.sku;
 
 
                 console.log(path);
+
+                var categories = []
+                for(var i=0, max = res2.length; i < max; i++){
+                    categories.push({'category': res2[i].category});
+                }
+
 
 // API url will look like   /distro/json/00001,00002,00003
 
@@ -263,7 +318,7 @@ module.exports = {
                   response.on('end', function(){
                     try {
                         console.log(responseData);
-                      res.view({details: responseData[0], prices: res1});
+                      res.view("affiliate1/product",{details: responseData[0], prices: res1, categories: categories});
                     // res.send({prices: res1, stock: responseData});
                         // callback(null, res1, responseData);
                     } catch (e) {
@@ -280,8 +335,12 @@ module.exports = {
         ]);
 
     },
+    additem: function (req, res) {
 
+        var sku = req.param('sku');
+        var price = req.param('price');
 
+<<<<<<< HEAD
     addItem: function(req,res){
     	var exist = false;
 
@@ -320,6 +379,57 @@ module.exports = {
 		console.log(req.session.affiliate1cart);
 
 		res.json(tempCart);
+=======
+    	//var cartItem = {
+    	//	sku : require.param('sku'),
+    	//	name : require.param('name'),
+    	//	price : require.param('price'),
+    	//	qty : 1
+    	//};
+
+        var cartitem = {
+            'qty': 1,
+            'sku': sku,
+            'price': price
+        }
+
+        res.json(cartitem);
+    },
+    viewcart: function (req, res) {
+        async.waterfall([
+            function(callback){
+                Affiliate1.find({ groupBy: [ 'category' ], sum: [ 'price' ] })
+                .done(function(err, usr) {
+                    if (err) {
+                        res.send(500, { error: "DB Error" });
+                    } else {
+
+                        // console.log(usr)
+                        callback(null, usr)
+                    }
+                });
+            },
+            function(res1, callback){
+
+                var categories = []
+                for(var i=0, max = res1.length; i < max; i++){
+                    categories.push({'category': res1[i].category});
+                }
+            // GET THE SESSION STORED CART
+
+            // TEST DATA
+                    var cartitem = {
+                        'qty': 1,
+                        'sku': "00002",
+                        'price': 10.99
+                    }
+
+                    res.view("affiliate1/cart",{cart: cartitem, categories: categories});
+
+                }
+        ]);
+
+>>>>>>> FETCH_HEAD
     }
 
 }

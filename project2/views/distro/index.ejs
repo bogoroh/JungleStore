@@ -1,5 +1,5 @@
 <!-- Default home page -->
-<link type="text/css" href='http://sailsjs.org/styles/fonts.css' rel='stylesheet'/>
+<link type="text/css" href='/styles/distro.css' rel='stylesheet'/>
 
 <!--[if IE 7]>
     <style>
@@ -7,35 +7,50 @@
     </style>
 <![endif]-->
 
-<div class="container clearfix">
-    <div class="main">
-        <h1>Distribution Route</h1>
 
-        <table>
-            <tr>
-                <th>sku</th>
-                <th>name</th>
-                <th>msrp</th>
-                <th>wholesale</th>
-                <th>category</th>
-                <th>stock</th>
-            </tr>
+    <header>
+        <div class="container">
+            <h1><a href="/distro">JungleStore</a></h1>
+            <span><a href="/distro/logout"> Log out </a></span>
+        </div>
+    </header>
+    <div class="container">
+        <div id="mainContent">
+            <table>
+                <thead>
+                    <tr>
+                        <th id="sku">sku</th>
+                        <th id="desc">description</th>
+                        <th id="msrp">msrp</th>
+                        <th id="wsp">wsp</th>
+                        <th id="cat">category</th>
+                        <th id="photos">photos</th>
+                        <th id="stock">stock</th>
+                    </tr>
+                </thead>
 
-        <% for(var i=0; i<skus.length; i++) {%>
-           <tr>
-            <td><%= skus[i].sku %></td>
-            <td><%= skus[i].name %></td>
-            <td><%= skus[i].msrp %></td>
-            <td><%= skus[i].wholesale %></td>
-            <td><%= skus[i].category %></td>
-            <td><%= skus[i].stock %></td>
+                <tbody>
+                    <% for(var i=0; i<skus.length; i++) {%>
+                       <tr>
+                        <td><%= skus[i].sku %></td>
+                        <td><%= skus[i].description %></td>
+                        <td><%= skus[i].msrp %></td>
+                        <td><%= skus[i].wholesale %></td>
+                        <td><%= skus[i].category %></td>
+                        <td>
 
-            </tr>
-        <% } %>
-        </table>
+                    <% for(var j=0; j<skus[i].photos.length; j++) {%>
+                    <%= skus[i].photos[j] %>&nbsp;&nbsp;
+                    <% } %>
 
-    </div>
+                        </td>
+                        <td><%= skus[i].stock %></td>
 
+                        </tr>
+                    <% } %>
+                </tbody>
+
+            </table>
+
+        </div>
 </div>
-
-<a href="/distro/logout"> Log out </a>

@@ -1,4 +1,16 @@
-<h1>This will be the login</h1>
+<link type="text/css" href='/styles/distro.css' rel='stylesheet'/>
+
+
+
+<header>
+	<div class="container">
+		<h1><a href="/distro">JungleStore</a></h1>
+	</div>
+</header>
+<div class="container">
+	<div id="mainContent">
+
+<h2>Login</h2>
 <%- req.flash('incorrect') %>
 <%- req.flash('session') %>
 <%- req.flash('logout') %>
@@ -8,3 +20,5 @@
 	<input type="submit" value="Submit">
 </form>
 <p>Not a member? <a href="/distro/signup" title="Link to Signup Page">Create account here</a></p>
+	</div>
+</div>
