@@ -332,24 +332,26 @@ module.exports = {
         ]);
 
     },
+    additem: function (req, res) {
 
+        var sku = req.param('sku');
+        var price = req.param('price');
 
-    addItem: function(res,req){
-
-    	var sku = req.param('sku');
-
-    		//var cartItem = {
+    	//var cartItem = {
     	//	sku : require.param('sku'),
     	//	name : require.param('name'),
     	//	price : require.param('price'),
     	//	qty : 1
     	//};
 
-    //	req.session.affiliate1cart.push(cartItem);		req.session.affiliate1cart
+        var cartitem = {
+            'qty': 1,
+            'sku': sku,
+            'price': price
+        }
 
-		console.log(sku);
+        res.json(cartitem);
 
-		//res.redirect();
     }
 
 }

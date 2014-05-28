@@ -34,7 +34,7 @@ h1 a {
 	text-decoration: none;
 }
 .product {
-	width: 200px;
+	width: 150px;
 	float: left;
 	margin: 40px;
 }
@@ -45,13 +45,14 @@ h1 a {
 	position: absolute;
 	right: 0;
 }
-button {
+button.addToCart {
 	border-radius: 90px;
 	background: #f2dd54;
 	padding: 5px 8px;
+	outline: none;
 }
 .productImage {
-	width: 200px;
+	width: 100%;
 }
 .strikethrough {
 	text-decoration: line-through;
