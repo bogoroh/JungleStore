@@ -18,7 +18,7 @@
 module.exports = {
 
 	index: function (req, res) {
-		if (!!req.session.user){
+		if (req.session.user){
 			Distro.find().done(function(err, usr) {
 				if (err) {
 					res.send(500, { error: "DB Error" });
@@ -28,7 +28,7 @@ module.exports = {
 				}
 			});
 		}else {
-			req.flash('session','Session has been timed out');
+			req.flash('session','You must log in to access this page.');
 			res.redirect("/distro/login")
 		}
 	},
