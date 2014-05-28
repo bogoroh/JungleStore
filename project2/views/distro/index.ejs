@@ -20,10 +20,11 @@
                 <thead>
                     <tr>
                         <th id="sku">sku</th>
-                        <th id="name">name</th>
+                        <th id="desc">description</th>
                         <th id="msrp">msrp</th>
                         <th id="wsp">wsp</th>
                         <th id="cat">category</th>
+                        <th id="photos">photos</th>
                         <th id="stock">stock</th>
                     </tr>
                 </thead>
@@ -32,10 +33,17 @@
                     <% for(var i=0; i<skus.length; i++) {%>
                        <tr>
                         <td><%= skus[i].sku %></td>
-                        <td><%= skus[i].name %></td>
+                        <td><%= skus[i].description %></td>
                         <td><%= skus[i].msrp %></td>
                         <td><%= skus[i].wholesale %></td>
                         <td><%= skus[i].category %></td>
+                        <td>
+
+                    <% for(var j=0; j<skus[i].photos.length; j++) {%>
+                    <%= skus[i].photos[j] %>&nbsp;&nbsp;
+                    <% } %>
+
+                        </td>
                         <td><%= skus[i].stock %></td>
 
                         </tr>

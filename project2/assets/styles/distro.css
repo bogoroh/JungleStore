@@ -57,22 +57,25 @@ table th {
 
 }
 #sku{
-    width: 10%;
+    width: 6%;
 }
-#name{
-    width: 50%;
+#desc{
+    width: 35%;
 }
 #msrp{
-    width: 10%;
+    width: 8%;
 }
 #wsp{
-    width: 10%;
+    width: 8%;
 }
 #cat{
     width: 10%;
 }
+#photos{
+    width: 27%;
+}
 #stock{
-    width: 10%;
+    width: 6%;
 }
 
 table th:nth-child(1n+2), table td:nth-child(1n+2) {
