@@ -282,22 +282,44 @@ module.exports = {
     },
 
 
-    addItem: function(res,req){
+    addItem: function(req,res){
+    	var exist = false;
 
-    	var sku = req.param('sku');
+    	
 
-    		//var cartItem = {
-    	//	sku : require.param('sku'),
-    	//	name : require.param('name'),
-    	//	price : require.param('price'),
-    	//	qty : 1
-    	//};
+    	if(req.session.affiliate1cart){
+    		var tempCart = req.session.affiliate1cart;
+    	}
+    	else{
+    		var tempCart = [];
+    	}
+    	console.log(tempCart);
 
-    //	req.session.affiliate1cart.push(cartItem);		req.session.affiliate1cart
+    	for(var i = 0; i < tempCart.length; i++){
+    		console.log(tempCart[i].sku);
+    		if(tempCart[i].sku == req.param('sku')){
+    			tempCart[i].qty++;
+    			exist = true;
+    		}
+    	}
 
-		console.log(sku);
+    	console.log(req.param('name'));
 
-		//res.redirect();
+    	if(exist == false){
+	    		var cartItem = {
+	    		sku : req.param('sku'),
+	    		name : req.param('name'),
+	    		price : req.param('price'),
+	    		qty : 1
+	    	};
+	    	tempCart.push(cartItem);
+    	}
+
+    	req.session.affiliate1cart = tempCart;
+
+		console.log(req.session.affiliate1cart);
+
+		res.json(tempCart);
     }
 
 }

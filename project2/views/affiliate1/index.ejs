@@ -16,8 +16,8 @@
 
         <% for(var i=0; i<details.length; i++) {%>
 
-           	<form action="/affiliate1/addcart?sku=<%= details[i].sku %>&price=<%= prices[i].price %>&name=<%= details[i].name %>" method="POST">
-                
+           	<div>
+
                 <p>Store Price:</p><p name="price"><%= prices[i].price %></p>
                 <p>SKU: </p><p name="sku"><%= details[i].sku %></p>
                 <p>Name: </p><p name="itemName"><%= details[i].name %></p>
@@ -28,9 +28,9 @@
                 <% for(var j=0; j<details[i].photos.length; j++) {%>
                    <img src="/images/<%= details[i].photos[j] %>">
                 <% } %>
-                <input type="submit" value="Add To Cart"/>
+                <input type="button" class="add2Cart" value="Add To Cart"/>
 
-            </form>
+            </div>
 
         <% } %>
 

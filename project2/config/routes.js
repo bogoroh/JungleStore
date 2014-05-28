@@ -82,7 +82,7 @@ module.exports.routes = {
     },
 
 
-    'post /affiliate1/addcart': {
+    'post /affiliate1/addcart/:sku/:price/:name': {
         controller: 'Affiliate1Controller',
         action: 'addItem'
     },
