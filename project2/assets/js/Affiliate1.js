@@ -18,18 +18,15 @@ $('.addToCart').click(function(e){
         success: function(response, responseText){
             console.log(response)
             console.log(responseText)
-//JSON.parse is actually not necessary because it is already being sent back as JSON
-            // result = JSON.parse(response);
-
 // this gets whatever the current # in the cart is
-            var currentCartItems = $('#cartItems').text();
+           // var currentCartItems = $('#cartItems').text();
 
-            if(currentCartItems == "")
+            //if(currentCartItems == "")
 // if it is empty, meaning the cart is currently empty, then put in the new item added (the response.qty being 1)
-                $('#cartItems').text(response.qty);
-            else{
+             //   $('#cartItems').text(response.qty);
+           // else{
 // otherwise, since we just added an item to the cart, add the response.qty to the previous cart #
-                $('#cartItems').empty().text( (currentCartItems*1) + response.qty);
+             //   $('#cartItems').empty().text( (currentCartItems*1) + response.qty);
             }        
         }
     });

@@ -397,15 +397,9 @@ module.exports = {
                     categories.push({'category': res1[i].category});
                 }
             // GET THE SESSION STORED CART
-            	var	userCart = req.session.affiliate1cart
+            	var	userCart = req.session.affiliate1cart;
             // TEST DATA
-                    var cartitem = {
-                        'qty': 1,
-                        'sku': "00002",
-                        'price': 10.99
-                    }
-
-                    res.view("affiliate1/cart",{cart: cartitem, categories: categories});
+                    res.view("affiliate1/cart",{cart: userCart, categories: categories});
 
                 }
         ]);
