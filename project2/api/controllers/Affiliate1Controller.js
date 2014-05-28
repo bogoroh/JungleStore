@@ -122,7 +122,8 @@ module.exports = {
                   response.on('end', function(){
                     try {
                         console.log(responseData);
-                      res.view({details: responseData, prices: res1, categories: categories});
+                        catPage = {}
+                      res.view({details: responseData, prices: res1, categories: categories, catPage: catPage});
                     // res.send({prices: res1, stock: responseData});
                         // callback(null, res1, responseData);
                     } catch (e) {
@@ -221,8 +222,10 @@ module.exports = {
 
                   response.on('end', function(){
                     try {
-                        console.log(responseData);
-                      res.view('affiliate1/index', {details: responseData, prices: res1, categories: categories});
+                        // console.log(responseData);
+                        // console.log("category" + category);
+                        catPage = {'category': category}
+                      res.view('affiliate1/index', {details: responseData, prices: res1, categories: categories, catPage: catPage});
                     // res.send({prices: res1, stock: responseData});
                         // callback(null, res1, responseData);
                     } catch (e) {

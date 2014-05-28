@@ -13,6 +13,13 @@
     <% include header %>
     <% include nav %>
 
+
+
+<% if (catPage.category) { %>
+    <h2><%= catPage.category %></h2>
+<% } %>
+
+
         <% for(var i=0; i<details.length; i++) {%>
         <div class="product">
             <form data-sku="<%= details[i].sku %>" data-price="<%= prices[i].price %>">

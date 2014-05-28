@@ -18,10 +18,13 @@ header .container {
     position: relative;
 }
 h1 {
-    color: #fff;
     margin: 0;
     font-size: 2em;
     line-height: 1em;
+}
+h1 a {
+    color: #fff;
+    text-decoration: none;
 }
 header span {
     position: absolute;

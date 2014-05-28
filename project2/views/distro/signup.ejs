@@ -1,7 +1,21 @@
-<h1>Signup/Register</h1>
+<link type="text/css" href='/styles/distro.css' rel='stylesheet'/>
+
+
+
+<header>
+	<div class="container">
+		<h1><a href="/distro">JungleStore</a></h1>
+	</div>
+</header>
+<div class="container">
+	<div id="mainContent">
+
+<h2>Signup/Register</h2>
 <%- req.flash('exist') %>
 <form method="POST" action="/distro/signupcheck">
 	<input type="text" name="username" placeholder="Username" autofocus>
 	<input type="password" name="password" placeholder="Password">
 	<input type="submit" value="Sign Up">
 </form>
+	</div>
+</div>
