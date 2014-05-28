@@ -335,12 +335,7 @@ module.exports = {
         ]);
 
     },
-    additem: function (req, res) {
 
-        var sku = req.param('sku');
-        var price = req.param('price');
-
-<<<<<<< HEAD
     addItem: function(req,res){
     	var exist = false;
 
@@ -379,22 +374,8 @@ module.exports = {
 		console.log(req.session.affiliate1cart);
 
 		res.json(tempCart);
-=======
-    	//var cartItem = {
-    	//	sku : require.param('sku'),
-    	//	name : require.param('name'),
-    	//	price : require.param('price'),
-    	//	qty : 1
-    	//};
-
-        var cartitem = {
-            'qty': 1,
-            'sku': sku,
-            'price': price
-        }
-
-        res.json(cartitem);
     },
+
     viewcart: function (req, res) {
         async.waterfall([
             function(callback){
@@ -416,7 +397,7 @@ module.exports = {
                     categories.push({'category': res1[i].category});
                 }
             // GET THE SESSION STORED CART
-
+            	var	userCart = req.session.affiliate1cart
             // TEST DATA
                     var cartitem = {
                         'qty': 1,
@@ -429,7 +410,7 @@ module.exports = {
                 }
         ]);
 
->>>>>>> FETCH_HEAD
+
     }
 
 }

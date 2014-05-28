@@ -1,34 +1,25 @@
-<<<<<<< HEAD
-$('.add2Cart').click(function(){
-	var div = $(this).parent('div');
-	div.find('p[name="sku"]');
-	div.find('p[name="price"]');
-	div.find('p[name="name"]');
-	
-});
-=======
+
 $('.addToCart').click(function(e){
     e.preventDefault();
     console.log("adding to cart");
     var item = $(this).parent();
     var price = item.attr("data-price");
     var sku = item.attr("data-sku");
-
->>>>>>> FETCH_HEAD
+    var name = item.attr("data-name");
 
     $.ajax({
         type: "POST",
-        url: "/affiliate1/addcart",
+        url: "/affiliate1/cart",
         data: {
             'price': price,
-            'sku': sku
+            'sku': sku,
+            'name': name
         },
         success: function(response, responseText){
             console.log(response)
             console.log(responseText)
 //JSON.parse is actually not necessary because it is already being sent back as JSON
             // result = JSON.parse(response);
-
 
 // this gets whatever the current # in the cart is
             var currentCartItems = $('#cartItems').text();

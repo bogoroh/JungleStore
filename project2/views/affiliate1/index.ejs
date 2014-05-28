@@ -13,28 +13,6 @@
     <% include header %>
     <% include nav %>
 
-<<<<<<< HEAD
-        <% for(var i=0; i<details.length; i++) {%>
-
-           	<div>
-
-                <p>Store Price:</p><p name="price"><%= prices[i].price %></p>
-                <p>SKU: </p><p name="sku"><%= details[i].sku %></p>
-                <p>Name: </p><p name="itemName"><%= details[i].name %></p>
-                <p>MSRP: </p><p><%= details[i].msrp %></p>
-                <p>Whole Sale: </p><p><%= details[i].wholesale %></p>
-                <p>Category: </p><p><%= details[i].category %></p>
-                <p></p><p><%= details[i].stock %></p>
-                <% for(var j=0; j<details[i].photos.length; j++) {%>
-                   <img src="/images/<%= details[i].photos[j] %>">
-                <% } %>
-                <input type="button" class="add2Cart" value="Add To Cart"/>
-
-            </div>
-=======
-
->>>>>>> FETCH_HEAD
-
 <% if (catPage.category) { %>
     <h2><%= catPage.category %></h2>
 <% } %>
@@ -42,7 +20,7 @@
 
         <% for(var i=0; i<details.length; i++) {%>
         <div class="product">
-            <form data-sku="<%= details[i].sku %>" data-price="<%= prices[i].price %>">
+            <form data-sku="<%= details[i].sku %>" data-price="<%= prices[i].price %>" data-name="<%= details[i].name %>">
                  <a href="/affiliate1/product/<%= details[i].sku %>"><img src="/images/<%= details[i].photos[0] %>" class="productImage"></a>
                  <p name="itemName"><%= details[i].name %></p>
                  <p>msrp: <span class="strikethrough right">$<%= details[i].msrp %></span></p>
