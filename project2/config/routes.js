@@ -72,7 +72,12 @@ module.exports.routes = {
         controller: 'Affiliate1Controller',
         action: 'additem'
     },
-    
+
+    'get /affiliate1/addcart': {
+        controller: 'Affiliate1Controller',
+        action: 'viewcart'
+    },
+
     '/affiliate1/product/:sku': {
         controller: 'Affiliate1Controller',
         action: 'product'

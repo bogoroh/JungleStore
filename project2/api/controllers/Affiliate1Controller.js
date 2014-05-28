@@ -351,6 +351,40 @@ module.exports = {
         }
 
         res.json(cartitem);
+    },
+    viewcart: function (req, res) {
+        async.waterfall([
+            function(callback){
+                Affiliate1.find({ groupBy: [ 'category' ], sum: [ 'price' ] })
+                .done(function(err, usr) {
+                    if (err) {
+                        res.send(500, { error: "DB Error" });
+                    } else {
+
+                        // console.log(usr)
+                        callback(null, usr)
+                    }
+                });
+            },
+            function(res1, callback){
+
+                var categories = []
+                for(var i=0, max = res1.length; i < max; i++){
+                    categories.push({'category': res1[i].category});
+                }
+            // GET THE SESSION STORED CART
+
+            // TEST DATA
+                    var cartitem = {
+                        'qty': 1,
+                        'sku': "00002",
+                        'price': 10.99
+                    }
+
+                    res.view("affiliate1/cart",{cart: cartitem, categories: categories});
+
+                }
+        ]);
 
     }
 
