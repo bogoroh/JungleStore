@@ -16,6 +16,17 @@ body {
     font-size: 16px;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
+header {
+	position: relative;
+}
+header .right {
+	position: absolute;
+	height: 20px;
+	margin: auto;
+	top: 0;
+	left: 85%;
+	bottom: 0;
+}
 h1 {
     font-family: 'Source Serif Pro', serif;
 }
@@ -32,7 +43,12 @@ h1 a {
 }
 .product .right {
 	position: absolute;
-	right: 10px;
+	right: 0;
+}
+button {
+	border-radius: 90px;
+	background: #f2dd54;
+	padding: 5px 8px;
 }
 .productImage {
 	width: 200px;
