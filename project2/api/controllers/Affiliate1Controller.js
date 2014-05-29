@@ -54,6 +54,7 @@ module.exports = {
         var products = async.waterfall([
             function(callback){
                 Affiliate1.find()
+                .where({stock: {">": 0}})
                 .sort('sku asc')
                 .done(function(err, usr) {
                     if (err) {
