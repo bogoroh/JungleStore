@@ -16,18 +16,36 @@ $('.addToCart').click(function(e){
             'name': name
         },
         success: function(response, responseText){
-            console.log(response)
-            console.log(responseText)
-// this gets whatever the current # in the cart is
-           // var currentCartItems = $('#cartItems').text();
+            console.log(response);
+            console.log(responseText);
+       		$('#cartItems').text(response.count);
 
-            //if(currentCartItems == "")
-// if it is empty, meaning the cart is currently empty, then put in the new item added (the response.qty being 1)
-             //   $('#cartItems').text(response.qty);
-           // else{
-// otherwise, since we just added an item to the cart, add the response.qty to the previous cart #
-             //   $('#cartItems').empty().text( (currentCartItems*1) + response.qty);
-            }        
+        }
+    });
+
+
+});
+
+
+$('.updateItem').click(function(e){
+    e.preventDefault();
+    console.log("updating cart");
+    var item = $(this).parent();
+    var price = item.attr("data-price");
+    var sku = item.attr("data-sku");
+    var qty = item.find("input");
+
+    $.ajax({
+        type: "PUT",
+        url: "/affiliate1/cart",
+        data: {
+            'price': price,
+            'sku': sku,
+            'qty': qty
+        },
+        success: function(response){
+
+       
         }
     });
 

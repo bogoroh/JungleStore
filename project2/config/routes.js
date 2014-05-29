@@ -70,12 +70,22 @@ module.exports.routes = {
 
     'post /affiliate1/cart': {
         controller: 'Affiliate1Controller',
-        action: 'addItem'
+        action: 'additem'
     },
 
     'get /affiliate1/cart': {
         controller: 'Affiliate1Controller',
         action: 'viewcart'
+    },
+
+    'put /affiliate1/cart': {
+        controller: 'Affiliate1Controller',
+        action: 'updateitem'
+    },
+
+    'delete /affiliate1/cart': {
+        controller: 'Affiliate1Controller',
+        action: 'deleteitem'
     },
 
     '/affiliate1/product/:sku': {

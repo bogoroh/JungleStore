@@ -336,7 +336,7 @@ module.exports = {
 
     },
 
-    addItem: function(req,res){
+    additem: function(req,res){
     	var exist = false;
 
     	
@@ -353,6 +353,7 @@ module.exports = {
     		console.log(tempCart[i].sku);
     		if(tempCart[i].sku == req.param('sku')){
     			tempCart[i].qty++;
+    			tempCart[i].total = Math.round(100*(tempCart[i].qty*(req.param('price')*1)))/100;
     			exist = true;
     		}
     	}
@@ -363,8 +364,9 @@ module.exports = {
 	    		var cartItem = {
 	    		sku : req.param('sku'),
 	    		name : req.param('name'),
-	    		price : req.param('price'),
-	    		qty : 1
+	    		price : req.param('price')*1,
+	    		qty : 1,
+	    		total: req.param('price')*1
 	    	};
 	    	tempCart.push(cartItem);
     	}
@@ -372,8 +374,17 @@ module.exports = {
     	req.session.affiliate1cart = tempCart;
 
 		console.log(req.session.affiliate1cart);
+		var CartCount = 0;
 
-		res.json(tempCart);
+		for(var i = 0; i< tempCart.length; i++){
+			CartCount += tempCart[i].qty;
+		}
+
+		var CountObj = {
+			count: CartCount
+		};
+
+		res.json(CountObj);
     },
 
     viewcart: function (req, res) {
@@ -398,13 +409,44 @@ module.exports = {
                 }
             // GET THE SESSION STORED CART
             	var	userCart = req.session.affiliate1cart;
+            	console.log("userCart");
+            	console.log(userCart);
             // TEST DATA
-                    res.view("affiliate1/cart",{cart: userCart, categories: categories});
+                var SubTotal = 0;
+            	for(var i = 0; i< userCart.length; i++){
+					SubTotal += Math.round(100*(userCart[i].total))/100;
+				}
+				var TotalObj = {
+					total: SubTotal
+				};
+
+                    res.view("affiliate1/cart",{cart: userCart, total: TotalObj, categories: categories});
 
                 }
         ]);
 
 
-    }
+    },
+
+     updateitem: function(req,res){
+        var tempCart = req.session.affiliate1cart;
+
+        for(var i = 0; i < tempCart.length; i++){
+            if(tempCart[i].sku == req.param('sku')){
+                tempCart[i].qty = req.param('qty');
+                tempCart[i].total = Math.round(100*(tempCart[i].qty*(req.param('price')*1)))/100;
+            }
+        }
+
+        var SubTotal = 0;
+        for(var i = 0; i< tempCart.length; i++){
+            SubTotal += Math.round(100*(tempCart[i].total))/100;
+        }
+        var TotalObj = {
+            total: SubTotal
+        };
+            res.view("affiliate1/cart",{cart: tempCart, total: TotalObj, categories: categories});
+
+     }
 
 }

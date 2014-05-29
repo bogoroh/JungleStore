@@ -17,10 +17,22 @@
 <div>
     <h3>Your Cart</h3>
 
-    quantity: <%= cart.qty %><br>
-    price: <%= cart.price %><br>
-    item: <%= cart.sku %><br>
+        <% for(var i=0; i<cart.length; i++) {%>
+        <div class="product">
+            <div data-sku="<%= cart[i].sku %>" data-price="<%= cart[i].price %>" data-name="<%= cart[i].name %>">
+                 <a href="/affiliate1/product/<%= cart[i].sku %>"></a>
+                 <p name="itemName"><%= cart[i].name %></p>
+                 <p>Our price: <span name="price" class="right">$<%= cart[i].price %></span></p>
+                 <p>Qty: <input type='number' name="qty" class="right" value="<%= cart[i].qty %>"/></p>
+                 <p>Item Total: <span name="total" class="right">$<%= cart[i].total %></span></p>
+                 <button class="updateItem right">Update</button>
+            </div>
+        </div>
+
+
+        <% } %>
+
 </div>
 
-
+<p>Total: $<%= total.total %></p>
 </div>
