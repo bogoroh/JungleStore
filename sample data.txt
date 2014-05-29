@@ -4,10 +4,251 @@
 
 db.affiliate1.remove({})
 db.affiliate2.remove({})
+db.distro.remove({})
 
-db.affiliate1.save([{sku: '00001', category: 'sports', price: 18.99},{sku: '00002', category: 'sports', price: 33.99},{sku: '00003', category: 'electronics', price: 21.99} ])
+db.affiliate1.save([
+{
+	"_id" : ObjectId("5386a5161767ffdf4b305759"),
+	"sku" : "00001",
+	"price" : 31.99
+},
+{
+	"_id" : ObjectId("5386a5651767ffdf4b30575a"),
+	"sku" : "00002",
+	"price" : 106.99
+},
+{
+	"_id" : ObjectId("5386a58b1767ffdf4b30575b"),
+	"sku" : "00003",
+	"price" : 11.99
+},
+{
+	"_id" : ObjectId("5386a5a91767ffdf4b30575c"),
+	"sku" : "00004",
+	"price" : 13.99
+},
+{
+	"_id" : ObjectId("5386a5c11767ffdf4b30575d"),
+	"sku" : "00005",
+	"price" : 121.99
+}])
 
-db.affiliate2.save([{sku: '00002', category: 'sports', price: 3.99},{sku: '00004', category: 'electronics', price: 15.99}])
+
+db.affiliate2.save([
+{
+	"_id" : ObjectId("5386a6961767ffdf4b30575f"),
+	"sku" : "00006",
+	"price" : 57.99
+},
+{
+	"_id" : ObjectId("5386a6b11767ffdf4b305760"),
+	"sku" : "00007",
+	"price" : 208.99
+},
+{
+	"_id" : ObjectId("5386a6d71767ffdf4b305761"),
+	"sku" : "00008",
+	"price" : 133.99
+},
+{
+	"_id" : ObjectId("5386a7141767ffdf4b305762"),
+	"sku" : "00009",
+	"price" : 211.99
+},
+{
+	"_id" : ObjectId("5386a7401767ffdf4b305763"),
+	"sku" : "00010",
+	"price" : 346.99
+},
+{
+	"_id" : ObjectId("5386a75e1767ffdf4b305764"),
+	"sku" : "00011",
+	"price" : 32.99
+},
+{
+	"_id" : ObjectId("5386a77e1767ffdf4b305765"),
+	"sku" : "00012",
+	"price" : 2289.99
+},
+{
+	"_id" : ObjectId("5386a7a41767ffdf4b305766"),
+	"sku" : "00013",
+	"price" : 566.99
+}])
+
+
+db.distro.save([
+{
+	"sku" : "00001",
+	"name" : "Addicted Gaming Keyboard",
+	"description" : "A computer keyboard designed specifically for gaming.",
+	"photos" : [
+		"comp_keyboard_small.jpg",
+		"comp_keyboard_large.jpg"
+	],
+	"msrp" : 34.99,
+	"wholesale" : 29.99,
+	"category" : "electronics",
+	"stock" : 300
+},
+{
+	"sku" : "00002",
+	"name" : "Computer Monitor",
+	"description" : "A computer monitor with 720p resolution capabilities.",
+	"photos" : [
+		"comp_monitor_small.jpg",
+		"comp_monitor_large.jpg"
+	],
+	"msrp" : 109.99,
+	"wholesale" : 104.99,
+	"category" : "electronics",
+	"stock" : 300
+},
+{
+	"sku" : "00003",
+	"name" : "USB Computer Mouse",
+	"description" : "A classic USB computer mouse.",
+	"photos" : [
+		"comp_mouse_small.jpg",
+		"comp_mouse_large.jpg"
+	],
+	"msrp" : 12.99,
+	"wholesale" : 10.99,
+	"category" : "electronics",
+	"stock" : 300
+},
+{
+	"sku" : "00004",
+	"name" : "Addicted Computer Speakers",
+	"description" : "Computer speakers with edgy design made just for you.",
+	"photos" : [
+		"comp_speakers_small.jpg",
+		"comp_speakers_large.jpg"
+	],
+	"msrp" : 14.99,
+	"wholesale" : 12.99,
+	"category" : "electronics",
+	"stock" : 300
+},
+{
+	"sku" : "00005",
+	"name" : "HP Laserjet Printer",
+	"description" : "The HP Laserjet printers are designed with energy-efficiency in mind. Print all your needs while saving energy!",
+	"photos" : [
+		"printer_small.jpg",
+		"printer_large.jpg"
+	],
+	"msrp" : 124.99,
+	"wholesale" : 120.99,
+	"category" : "electronics",
+	"stock" : 300
+},
+{
+	"sku" : "00006",
+	"name" : "Cool Essence Glass Coffee Table",
+	"description" : "A coffee table with glass design for your living room to shine!",
+	"photos" : [
+		"coffee_table_small.jpg",
+		"coffee_table_large.jpg"
+	],
+	"msrp" : 59.99,
+	"wholesale" : 57.99,
+	"category" : "furniture",
+	"stock" : 300
+},
+{
+	"sku" : "00007",
+	"name" : "Cool Essence Couch",
+	"description" : "Whether you want to sit, lay down, or simply sleep, the Cool Essence Couch is just for you. It is comfortable, elegant, and durable.",
+	"photos" : [
+		"couch_small.jpg",
+		"couch_large.jpg"
+	],
+	"msrp" : 209.99,
+	"wholesale" : 207.99,
+	"category" : "furniture",
+	"stock" : 300
+},
+{
+	"sku" : "00008",
+	"name" : "Cool Essence Dining Table",
+	"description" : "An elegant glass dining table for a maximum of 4 people.",
+	"photos" : [
+		"dining_table_small.jpg",
+		"dining_table_large.jpg"
+	],
+	"msrp" : 134.99,
+	"wholesale" : 132.99,
+	"category" : "furniture",
+	"stock" : 300
+},
+{
+	"sku" : "00009",
+	"name" : "Cool Essence Dresser",
+	"description" : "A beautiful white dresser with 11 drawers and a mirror.",
+	"photos" : [
+		"dresser_small.jpg",
+		"dresser_large.jpg"
+	],
+	"msrp" : 214.99,
+	"wholesale" : 210.99,
+	"category" : "furniture",
+	"stock" : 300
+},
+{
+	"sku" : "00010",
+	"name" : "Appliance Wonders Dryer",
+	"description" : "110v dryer for all those laundry days!",
+	"photos" : [
+		"dryer_small.jpg",
+		"dryer_large.jpg"
+	],
+	"msrp" : 349.99,
+	"wholesale" : 345.99,
+	"category" : "appliances",
+	"stock" : 300
+},
+{
+	"sku" : "00011",
+	"name" : "Appliance Wonders Toaster Oven",
+	"description" : "Toaster Oven made of steel for those days when you just need that french toast.",
+	"photos" : [
+		"toaster_oven_small.jpg",
+		"toaster_oven_large.jpg"
+	],
+	"msrp" : 34.99,
+	"wholesale" : 31.99,
+	"category" : "appliances",
+	"stock" : 300
+},
+{
+	"sku" : "00012",
+	"name" : "Appliance Wonders Refrigerator",
+	"description" : "Full-feature refrigerator with Dual Ice, and Full-Width Cool-Zone Drawer.",
+	"photos" : [
+		"refrigerator_small.jpg",
+		"refrigerator_large.jpg"
+	],
+	"msrp" : 2292.99,
+	"wholesale" : 2280.99,
+	"category" : "appliances",
+	"stock" : 300
+},
+{
+	"sku" : "00013",
+	"name" : "Appliance Wonders Washing Machine",
+	"description" : "Washing Machine with 5 temperature settings to accommodate a variety of fabric types.",
+	"photos" : [
+		"washing_machine_small.jpg",
+		"washing_machine_large.jpg"
+	],
+	"msrp" : 568.99,
+	"wholesale" : 564.99,
+	"category" : "appliances",
+	"stock" : 300
+}])
+
+
 
 
 db.admin.save({"username":"admin","password":"password" })
@@ -22,47 +263,3 @@ db.distrokeys.save([
     site: "Affiliate 2", apikey : '994D49B55DB0748324BB4A6366197730'
 }
 ])
-
-
-
-db.distro.save([
-{
-    sku: '00001',
-    name: 'Product 1',
-    description: 'Description of Product 1',
-    photos: ['1.jpg','2.jpg','3.jpg'],
-    msrp: 10.99,
-    wholesale: 6.99,
-    category: 'sports',
-    stock: 300
-},
-{
-    sku: '00002',
-    name: 'Product 2',
-    description: 'Description of product 2',
-    photos: ['1.jpg','2.jpg','3.jpg'],
-    msrp: 10.99,
-    wholesale: 6.99,
-    category: 'sports',
-    stock: 300
-},
-{
-    sku: '00003',
-    name: 'Product 3',
-    description: 'Description of product 3',
-    photos: ['1.jpg','2.jpg','3.jpg'],
-    msrp: 10.99,
-    wholesale: 6.99,
-    category: 'electronics',
-    stock: 300
-},
-{
-    sku: '00004',
-    name: 'Product 4',
-    description: 'Description of product 4',
-    photos: ['1.jpg','2.jpg','3.jpg'],
-    msrp: 10.99,
-    wholesale: 6.99,
-    category: 'electronics',
-    stock: 300
-}])
