@@ -102,7 +102,7 @@ db.distro.save([
 	"msrp" : 34.99,
 	"wholesale" : 29.99,
 	"category" : "electronics",
-	"stock" : 300
+	"stock" : 0
 },
 {
 	"sku" : "00002",
