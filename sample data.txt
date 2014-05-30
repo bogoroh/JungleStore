@@ -96,8 +96,8 @@ db.distro.save([
 	"name" : "Addicted Gaming Keyboard",
 	"description" : "A computer keyboard designed specifically for gaming.",
 	"photos" : {
-		thumbs: ["comp_keyboard_small.jpg"],
-		full: ["comp_keyboard_large.jpg"]
+		thumbs: ["comp_keyboard_small.jpg","comp_keyboard2_small.jpg","comp_keyboard3_small.jpg"],
+		full: ["comp_keyboard_large.jpg","comp_keyboard2_large.jpg","comp_keyboard3_large.jpg"]
 		},
 	"msrp" : 34.99,
 	"wholesale" : 29.99,
@@ -109,8 +109,8 @@ db.distro.save([
 	"name" : "Computer Monitor",
 	"description" : "A computer monitor with 720p resolution capabilities.",
 	"photos" : {
-		thumbs: ["comp_monitor_small.jpg"],
-		full: ["comp_monitor_large.jpg"]
+		thumbs: ["comp_monitor_small.jpg", "comp_monitor2_small.jpg", "comp_monitor3_small.jpg"],
+		full: ["comp_monitor_large.jpg", "comp_monitor2_large.jpg", "comp_monitor3_large.jpg"]
 		},
 	"msrp" : 109.99,
 	"wholesale" : 104.99,
@@ -122,8 +122,8 @@ db.distro.save([
 	"name" : "USB Computer Mouse",
 	"description" : "A classic USB computer mouse.",
 	"photos" : {
-		thumbs: ["comp_mouse_small.jpg"],
-		full: ["comp_mouse_large.jpg"]
+		thumbs: ["comp_mouse_small.jpg", "comp_mouse2_small.jpg", "comp_mouse3_small.jpg"],
+		full: ["comp_mouse_large.jpg", "comp_mouse2_large.jpg", "comp_mouse3_large.jpg"]
 		},
 	"msrp" : 12.99,
 	"wholesale" : 10.99,
@@ -135,8 +135,8 @@ db.distro.save([
 	"name" : "Addicted Computer Speakers",
 	"description" : "Computer speakers with edgy design made just for you.",
 	"photos" : {
-		thumbs: ["comp_speakers_small.jpg"],
-		full: ["comp_speakers_large.jpg"]
+		thumbs: ["comp_speakers_small.jpg", "comp_speakers2_small.jpg", "comp_speakers3_small.jpg"],
+		full: ["comp_speakers_large.jpg", "comp_speakers2_large.jpg", "comp_speakers3_large.jpg"]
 		},
 	"msrp" : 14.99,
 	"wholesale" : 12.99,
@@ -148,8 +148,8 @@ db.distro.save([
 	"name" : "HP Laserjet Printer",
 	"description" : "The HP Laserjet printers are designed with energy-efficiency in mind. Print all your needs while saving energy!",
 	"photos" : {
-		thumbs: ["printer_small.jpg"],
-		full: ["printer_large.jpg"]
+		thumbs: ["printer_small.jpg", "printer2_small.jpg", "printer3_small.jpg"],
+		full: ["printer_large.jpg", "printer2_large.jpg", "printer3_large.jpg"]
 		},
 	"msrp" : 124.99,
 	"wholesale" : 120.99,
@@ -161,8 +161,8 @@ db.distro.save([
 	"name" : "Cool Essence Glass Coffee Table",
 	"description" : "A coffee table with glass design for your living room to shine!",
 	"photos" : {
-		thumbs: ["coffee_table_small.jpg"],
-		full: ["coffee_table_large.jpg"]
+		thumbs: ["coffee_table_small.jpg", "coffee_table2_small.jpg", "coffee_table3_small.jpg"],
+		full: ["coffee_table_large.jpg", "coffee_table2_large.jpg", "coffee_table3_large.jpg"]
 		},
 	"msrp" : 59.99,
 	"wholesale" : 57.99,
@@ -174,8 +174,8 @@ db.distro.save([
 	"name" : "Cool Essence Couch",
 	"description" : "Whether you want to sit, lay down, or simply sleep, the Cool Essence Couch is just for you. It is comfortable, elegant, and durable.",
 	"photos" : {
-		thumbs: ["couch_small.jpg"],
-		full: ["couch_large.jpg"]
+		thumbs: ["couch_small.jpg", "couch2_small.jpg", "couch3_small.jpg"],
+		full: ["couch_large.jpg", "couch2_large.jpg", "couch3_large.jpg"]
 		},
 	"msrp" : 209.99,
 	"wholesale" : 207.99,
@@ -187,8 +187,8 @@ db.distro.save([
 	"name" : "Cool Essence Dining Table",
 	"description" : "An elegant glass dining table for a maximum of 4 people.",
 	"photos" : {
-		thumbs: ["dining_table_small.jpg"],
-		full: ["dining_table_large.jpg"]
+		thumbs: ["dining_table_small.jpg", "dining_table2_small.jpg", "dining_table3_small.jpg"],
+		full: ["dining_table_large.jpg", "dining_table2_large.jpg", "dining_table3_large.jpg"]
 		},
 	"msrp" : 134.99,
 	"wholesale" : 132.99,
@@ -200,8 +200,8 @@ db.distro.save([
 	"name" : "Cool Essence Dresser",
 	"description" : "A beautiful white dresser with 11 drawers and a mirror.",
 	"photos" : {
-		thumbs: ["dresser_small.jpg"],
-		full: ["dresser_large.jpg"]
+		thumbs: ["dresser_small.jpg", "dresser2_small.jpg", "dresser3_small.jpg"],
+		full: ["dresser_large.jpg", "dresser2_large.jpg", "dresser3_large.jpg"]
 		},
 	"msrp" : 214.99,
 	"wholesale" : 210.99,
@@ -213,8 +213,8 @@ db.distro.save([
 	"name" : "Appliance Wonders Dryer",
 	"description" : "110v dryer for all those laundry days!",
 	"photos" : {
-		thumbs: ["dryer_small.jpg"],
-		full: ["dryer_large.jpg"]
+		thumbs: ["dryer_small.jpg", "dryer2_small.jpg", "dryer3_small.jpg"],
+		full: ["dryer_large.jpg", "dryer2_large.jpg", "dryer3_large.jpg"]
 		},
 	"msrp" : 349.99,
 	"wholesale" : 345.99,
@@ -226,8 +226,8 @@ db.distro.save([
 	"name" : "Appliance Wonders Toaster Oven",
 	"description" : "Toaster Oven made of steel for those days when you just need that french toast.",
 	"photos" : {
-		thumbs: ["toaster_oven_small.jpg"],
-		full: ["toaster_oven_large.jpg"]
+		thumbs: ["toaster_oven_small.jpg", "toaster_oven2_small.jpg", "toaster_oven3_small.jpg"],
+		full: ["toaster_oven_large.jpg", "toaster_oven2_large.jpg", "toaster_oven3_large.jpg"]
 		},
 	"msrp" : 34.99,
 	"wholesale" : 31.99,
@@ -239,8 +239,8 @@ db.distro.save([
 	"name" : "Appliance Wonders Refrigerator",
 	"description" : "Full-feature refrigerator with Dual Ice, and Full-Width Cool-Zone Drawer.",
 	"photos" : {
-		thumbs: ["refrigerator_small.jpg"],
-		full: ["refrigerator_large.jpg"]
+		thumbs: ["refrigerator_small.jpg", "refrigerator2_small.jpg", "refrigerator3_small.jpg"],
+		full: ["refrigerator_large.jpg", "refrigerator2_large.jpg", "refrigerator3_large.jpg"]
 		},
 	"msrp" : 2292.99,
 	"wholesale" : 2280.99,
@@ -252,8 +252,8 @@ db.distro.save([
 	"name" : "Appliance Wonders Washing Machine",
 	"description" : "Washing Machine with 5 temperature settings to accommodate a variety of fabric types.",
 	photos: {
-		thumbs: ["washing_machine_small.jpg"],
-		full: ["washing_machine_large.jpg"]
+		thumbs: ["washing_machine_small.jpg", "washing_machine2_small.jpg", "washing_machine3_small.jpg"],
+		full: ["washing_machine_large.jpg", "washing_machine2_large.jpg", "washing_machine3_large.jpg"]
 		},	
 	"msrp" : 568.99,
 	"wholesale" : 564.99,
