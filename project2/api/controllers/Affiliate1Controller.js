@@ -377,7 +377,7 @@ module.exports = {
 		var CartCount = 0;
 
 		for(var i = 0; i< tempCart.length; i++){
-			CartCount += tempCart[i].qty;
+			CartCount += (tempCart[i].qty)*1;
 		}
 
 		var CountObj = {
@@ -414,7 +414,7 @@ module.exports = {
             // TEST DATA
                 var SubTotal = 0;
             	for(var i = 0; i< userCart.length; i++){
-					SubTotal += Math.round(100*(userCart[i].total))/100;
+					SubTotal += (Math.round(100*(userCart[i].total))/100);
 				}
 				var TotalObj = {
 					total: SubTotal
@@ -434,7 +434,13 @@ module.exports = {
         for(var i = 0; i < tempCart.length; i++){
             if(tempCart[i].sku == req.param('sku')){
                 tempCart[i].qty = req.param('qty');
-                tempCart[i].total = Math.round(100*(tempCart[i].qty*(req.param('price')*1)))/100;
+                tempCart[i].total = (Math.round(100*(tempCart[i].qty*(req.param('price')*1)))/100);
+
+                updateditem = {
+                    sku:tempCart[i].sku,
+                    qty: tempCart[i].qty,
+                    total: tempCart[i].total,
+                }
             }
         }
 
@@ -442,13 +448,35 @@ module.exports = {
 
         var SubTotal = 0;
         for(var i = 0; i< tempCart.length; i++){
-            SubTotal += Math.round(100*(tempCart[i].total))/100;
+            SubTotal += (Math.round(100*(tempCart[i].total))/100);
         }
         var TotalObj = {
-            total: SubTotal
+            total: (SubTotal).toFixed(2)
         };
-            res.view("affiliate1/cart",{cart: tempCart, total: TotalObj, categories: categories});
+            res.json({item: updateditem, total: TotalObj});
 
-     }
+     },
+
+      deleteitem: function(req,res){
+         var tempCart = req.session.affiliate1cart;
+
+         for(var i = 0; i < tempCart.length; i++){
+             if(tempCart[i].sku == req.param('sku')){
+                 tempCart.splice(i,1);
+             }
+         }
+
+         req.session.affiliate1cart = tempCart;
+
+         var SubTotal = 0;
+         for(var i = 0; i< tempCart.length; i++){
+             SubTotal += (Math.round(100*(tempCart[i].total))/100);
+         }
+         var TotalObj = {
+             total: SubTotal
+         };
+             res.json({total: TotalObj});
+
+      }
 
 }

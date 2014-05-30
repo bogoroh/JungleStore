@@ -118,7 +118,36 @@ button.addToCart {
 .strikethrough {
 	text-decoration: line-through;
 }
-
 .otherImages img {
 	width: 75px;
+}
+
+
+ul#shoppingCart{
+	width: 100%;
+}
+ul#shoppingCart li{
+	position: relative;
+	width: 100%;
+	margin-bottom: 15px;
+	padding: 15px;
+}
+ul#shoppingCart li:nth-child(even){
+	background: #d6d6d6;
+}
+ul#shoppingCart li input{
+	width: 40px;
+}
+ul#shoppingCart li button{
+	width: 80px;
+}
+ul#shoppingCart li .cartInfo {
+	position: absolute;
+	right: 10%;
+	width: 200px;
+
+}
+ul#shoppingCart li .cartActions {
+	position: absolute;
+	right: 0;
 }

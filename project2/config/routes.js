@@ -83,7 +83,7 @@ module.exports.routes = {
         action: 'updateitem'
     },
 
-    'delete /affiliate1/cart': {
+    'post /affiliate1/cart/delete': {
         controller: 'Affiliate1Controller',
         action: 'deleteitem'
     },
