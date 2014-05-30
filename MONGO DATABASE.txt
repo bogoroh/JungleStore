@@ -1,0 +1,18 @@
+/////////// after you start mongo 
+
+
+
+use jungle
+db.dropDatabase()
+
+
+
+
+///////// this will destroy your existing jungle database
+///////// then at the terminal prompt, not inside mongo while it is running do the following command
+
+
+
+
+
+./mongorestore /PATH_TO_JUNGLE_DIRECTORY_IN_REPO
