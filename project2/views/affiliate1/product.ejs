@@ -22,7 +22,7 @@
     <form data-sku="<%= details.sku %>" data-price="<%= prices.price %>">
 
         <h3><%= details.name %></h3>
-         <a href="/images/<%= details.photos[0] %>" data-lightbox="productImages"><img src="/images/<%= details.photos[0] %>"></a>
+         <a href="/images/<%= details.photos.full[0] %>" data-lightbox="productImages"><img src="/images/<%= details.photos.full[0] %>"></a>
         <p><%= details.description %></p>
 
          <p>msrp: <span class="strikethrough right">$<%= details.msrp %></span></p>
@@ -33,8 +33,8 @@
             <button type="submit" class="addToCart right">Add To Cart</button>
         </p>
         <p class="otherImages">
-            <% for(var j=1; j<details.photos.length; j++) {%>
-            <a href="/images/<%= details.photos[j] %>" data-lightbox="productImages"><img src="/images/<%= details.photos[j] %>"></a>
+            <% for(var j=0; j<details.photos.thumbs.length; j++) {%>
+            <a href="/images/<%= details.photos.full[j] %>" data-lightbox="productImages"><img src="/images/<%= details.photos.thumbs[j] %>"></a>
 
             <% } %>
         </p>

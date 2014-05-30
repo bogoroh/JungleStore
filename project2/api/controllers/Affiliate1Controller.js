@@ -54,7 +54,6 @@ module.exports = {
         var products = async.waterfall([
             function(callback){
                 Affiliate1.find()
-                .where({stock: {">": 0}})
                 .sort('sku asc')
                 .done(function(err, usr) {
                     if (err) {
@@ -340,7 +339,7 @@ module.exports = {
     additem: function(req,res){
     	var exist = false;
 
-    	
+
 
     	if(req.session.affiliate1cart){
     		var tempCart = req.session.affiliate1cart;

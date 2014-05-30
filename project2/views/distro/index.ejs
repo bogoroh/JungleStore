@@ -38,11 +38,15 @@
                         <td><%= skus[i].wholesale %></td>
                         <td><%= skus[i].category %></td>
                         <td>
-
-                    <% for(var j=0; j<skus[i].photos.length; j++) {%>
-                    <%= skus[i].photos[j] %>&nbsp;&nbsp;
-                    <% } %>
-
+                        <b>thumbs</b>:
+                            <% for(var j=0; j<skus[i].photos.thumbs.length; j++) {%>
+                            <%= skus[i].photos.thumbs[j] %>&nbsp;&nbsp;
+                            <% } %>
+                        <br>
+                        <b>full</b>:
+                            <% for(var j=0; j<skus[i].photos.full.length; j++) {%>
+                            <%= skus[i].photos.full[j] %>&nbsp;&nbsp;
+                            <% } %>
                         </td>
                         <td><%= skus[i].stock %></td>
 
