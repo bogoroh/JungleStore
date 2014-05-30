@@ -15,6 +15,9 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
+
+
+
 module.exports = {
     index: function (req, res) {
 
@@ -120,10 +123,23 @@ module.exports = {
                   });
 
                   response.on('end', function(){
+
+
                     try {
+                        if(req.session.affiliate1cart){
+                            var tempCart = req.session.affiliate1cart;
+                            var CartCount = 0;
+                            for(var i = 0; i< tempCart.length; i++){
+                                CartCount += (tempCart[i].qty)*1;
+                            }
+                            var cartQty = CartCount;
+                        }
+                        else{
+                            var cartQty =  0;
+                        };
                         console.log(responseData);
                         catPage = {}
-                      res.view({details: responseData, prices: res1, categories: categories, catPage: catPage});
+                      res.view({details: responseData, prices: res1, categories: categories, catPage: catPage, cartQty: cartQty });
                     // res.send({prices: res1, stock: responseData});
                         // callback(null, res1, responseData);
                     } catch (e) {
@@ -222,10 +238,19 @@ module.exports = {
 
                   response.on('end', function(){
                     try {
-                        // console.log(responseData);
-                        // console.log("category" + category);
+                        if(req.session.affiliate1cart){
+                            var tempCart = req.session.affiliate1cart;
+                            var CartCount = 0;
+                            for(var i = 0; i< tempCart.length; i++){
+                                CartCount += (tempCart[i].qty)*1;
+                            }
+                            var cartQty = CartCount;
+                        }
+                        else{
+                            var cartQty =  0;
+                        };
                         catPage = {'category': category}
-                      res.view('affiliate1/index', {details: responseData, prices: res1, categories: categories, catPage: catPage});
+                      res.view('affiliate1/index', {details: responseData, prices: res1, categories: categories, catPage: catPage, cartQty: cartQty});
                     // res.send({prices: res1, stock: responseData});
                         // callback(null, res1, responseData);
                     } catch (e) {
@@ -317,8 +342,19 @@ module.exports = {
 
                   response.on('end', function(){
                     try {
-                        console.log(responseData);
-                      res.view("affiliate1/product",{details: responseData[0], prices: res1, categories: categories});
+                        if(req.session.affiliate1cart){
+                            var tempCart = req.session.affiliate1cart;
+                            var CartCount = 0;
+                            for(var i = 0; i< tempCart.length; i++){
+                                CartCount += (tempCart[i].qty)*1;
+                            }
+                            var cartQty = CartCount;
+                        }
+                        else{
+                            var cartQty =  0;
+                        };
+                        // console.log(responseData);
+                      res.view("affiliate1/product",{details: responseData[0], prices: res1, categories: categories, cartQty: cartQty});
                     // res.send({prices: res1, stock: responseData});
                         // callback(null, res1, responseData);
                     } catch (e) {
@@ -407,25 +443,40 @@ module.exports = {
                 for(var i=0, max = res1.length; i < max; i++){
                     categories.push({'category': res1[i].category});
                 }
-            // GET THE SESSION STORED CART
-            	var	userCart = req.session.affiliate1cart;
-            	console.log("userCart");
-            	console.log(userCart);
-            // TEST DATA
-                var SubTotal = 0;
-            	for(var i = 0; i< userCart.length; i++){
-					SubTotal += (Math.round(100*(userCart[i].total))/100);
-				}
-				var TotalObj = {
-					total: SubTotal
-				};
 
-                    res.view("affiliate1/cart",{cart: userCart, total: TotalObj, categories: categories});
+
+                if (req.session.affiliate1cart) {
+                    // GET THE SESSION STORED CART
+                        var userCart = req.session.affiliate1cart;
+                        console.log("userCart");
+                        console.log(userCart);
+                    // TEST DATA
+                        var SubTotal = 0;
+                        for(var i = 0; i< userCart.length; i++){
+                            SubTotal += (Math.round(100*(userCart[i].total))/100);
+                        }
+                        SubTotal = Math.round(100*SubTotal)/100;
+                        var TotalObj = {
+                            total: SubTotal
+                        };
+
+
+                            var CartCount = 0;
+                            for(var i = 0; i< userCart.length; i++){
+                                CartCount += (userCart[i].qty)*1;
+                            }
+                            var cartQty = CartCount;
+
+                        res.view("affiliate1/cart",{cart: userCart, total: TotalObj, categories: categories, cartQty: cartQty});
+                }else{
+
+                    var cartQty =  0;
+
+                        res.view("affiliate1/emptycart",{categories: categories, cartQty: cartQty});
 
                 }
+            }
         ]);
-
-
     },
 
      updateitem: function(req,res){
@@ -450,10 +501,22 @@ module.exports = {
         for(var i = 0; i< tempCart.length; i++){
             SubTotal += (Math.round(100*(tempCart[i].total))/100);
         }
+        SubTotal = Math.round(100*SubTotal)/100;
         var TotalObj = {
-            total: (SubTotal).toFixed(2)
+            total: SubTotal
         };
-            res.json({item: updateditem, total: TotalObj});
+        if(req.session.affiliate1cart){
+
+            var CartCount = 0;
+            for(var i = 0; i< tempCart.length; i++){
+                CartCount += (tempCart[i].qty)*1;
+            }
+            var cartQty = CartCount;
+        }
+        else{
+            var cartQty =  0;
+        };
+            res.json({item: updateditem, total: TotalObj, cartQty: cartQty});
 
      },
 
@@ -472,10 +535,22 @@ module.exports = {
          for(var i = 0; i< tempCart.length; i++){
              SubTotal += (Math.round(100*(tempCart[i].total))/100);
          }
+         SubTotal = Math.round(100*SubTotal)/100;
          var TotalObj = {
              total: SubTotal
          };
-             res.json({total: TotalObj});
+         if(req.session.affiliate1cart){
+
+             var CartCount = 0;
+             for(var i = 0; i< tempCart.length; i++){
+                 CartCount += (tempCart[i].qty)*1;
+             }
+             var cartQty = CartCount;
+         }
+         else{
+             var cartQty =  0;
+         };
+             res.json({total: TotalObj, cartQty: cartQty});
 
       }
 

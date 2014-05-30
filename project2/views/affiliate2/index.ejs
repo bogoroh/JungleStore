@@ -8,34 +8,40 @@
 <![endif]-->
 
 
-<div class="container clearfix">
-    <div class="main">
-        <!-- <h1 id="main-title"><%= __('Welcome') %></h1> -->
-        <h1>Affiliate 2</h1>
-        <% include nav %>
+<div class="container">
 
+    <% include header2 %>
+    <% include nav %>
 
+<% if (catPage.category) { %>
+    <h2><%= catPage.category %></h2>
+<% } %>
 
 
         <% for(var i=0; i<details.length; i++) {%>
-           <p>
+        <div class="product">
+            <div data-sku="<%= details[i].sku %>" data-price="<%= prices[i].price %>" data-name="<%= details[i].name %>">
+                 <a href="/affiliate2/product/<%= details[i].sku %>"><img src="/images/<%= details[i].photos.thumbs[0] %>" class="productImage"></a>
+                 <p name="itemName"><%= details[i].name %></p>
+                 <p>msrp: <span class="strikethrough right">$<%= details[i].msrp %></span></p>
+                 <p>Our price: <span name="price" class="right">$<%= prices[i].price %></span></p>
 
-                store price: <%= prices[i].price %><br>
+                 <!-- <p>Whole Sale: </p><p><%= details[i].wholesale %></p> -->
+                 <!-- <p>Category: </p><p><%= details[i].category %></p> -->
+                 <!-- <p></p><p><%= details[i].stock %></p> -->
+                 <!-- <% for(var j=0; j<details[i].photos.length; j++) {%>
+                    <img src="/images/<%= details[i].photos[j] %>">
+                 <% } %> -->
 
-                sku: <%= details[i].sku %><br>
-                product: <%= details[i].name %><br>
-                msrp: <%= details[i].msrp %><br>
-                wholesale: <%= details[i].wholesale %><br>
-                category: <%= details[i].category %><br>
-                stock: <%= details[i].stock %><br>
-                <% for(var j=0; j<details[i].photos.length; j++) {%>
-                   <img src="/images/<%= details[i].photos[j] %>">
-                <% } %>
-            </p>
+                 <!-- <p>SKU: </p><p name="sku"></p> -->
+                 <button class="addToCart right">Add To Cart</button>
+
+            </div>
+        </div>
+
 
         <% } %>
-
-
-    </div>
-
 </div>
+
+
+<script type="text/javascript" src="/js/Affiliate2.js"></script>

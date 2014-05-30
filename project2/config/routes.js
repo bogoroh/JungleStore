@@ -96,6 +96,43 @@ module.exports.routes = {
     '/affiliate1/:category': {
         controller: 'Affiliate1Controller',
         action: 'category'
+    },
+
+
+
+    '/affiliate2': {
+        controller: 'Affiliate2Controller',
+        action: 'index'
+    },
+
+    'post /affiliate2/cart': {
+        controller: 'Affiliate2Controller',
+        action: 'additem'
+    },
+
+    'get /affiliate2/cart': {
+        controller: 'Affiliate2Controller',
+        action: 'viewcart'
+    },
+
+    'post /affiliate2/cart/update': {
+        controller: 'Affiliate2Controller',
+        action: 'updateitem'
+    },
+
+    'post /affiliate2/cart/delete': {
+        controller: 'Affiliate2Controller',
+        action: 'deleteitem'
+    },
+
+    '/affiliate2/product/:sku': {
+        controller: 'Affiliate2Controller',
+        action: 'product'
+    },
+
+    '/affiliate2/:category': {
+        controller: 'Affiliate2Controller',
+        action: 'category'
     }
 
 

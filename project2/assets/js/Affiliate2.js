@@ -9,7 +9,7 @@ $('.addToCart').click(function(e){
 
     $.ajax({
         type: "POST",
-        url: "/affiliate1/cart",
+        url: "/affiliate2/cart",
         data: {
             'price': price,
             'sku': sku,
@@ -18,7 +18,7 @@ $('.addToCart').click(function(e){
         success: function(response, responseText){
             console.log(response);
             console.log(responseText);
-       		$('#cartItems').text(response.count);
+               $('#cartItems').text(response.count);
 
         }
     });
@@ -37,7 +37,7 @@ $('.updateItem').click(function(e){
 
     $.ajax({
         type: "POST",
-        url: "/affiliate1/cart/update",
+        url: "/affiliate2/cart/update",
         data: {
             'price': price,
             'sku': sku,
@@ -84,7 +84,7 @@ $('.deleteItem').click(function(e){
 
     $.ajax({
         type: "POST",
-        url: "/affiliate1/cart/delete",
+        url: "/affiliate2/cart/delete",
         data: {
             'sku': sku
         },
