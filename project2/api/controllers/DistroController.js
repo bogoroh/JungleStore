@@ -65,6 +65,7 @@ module.exports = {
 				// console.log(prodSkus);
 				// Find all products that match the entered skus, and return it as a JSON entity
 				Distro.find({sku: prodSkus})
+                .where({stock: {">": 0}})
 				.sort('sku asc')
 				.done(function(err, usr) {
 					if (err) {
