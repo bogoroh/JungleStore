@@ -23,7 +23,7 @@
                  <a href="/affiliate1/product/<%= cart[i].sku %>"></a>
                  <p name="itemName"><%= cart[i].name %></p>
                  <p>Our price: <span name="price" class="right">$<%= cart[i].price %></span></p>
-                 <p>Qty: <input type='number' name="qty" class="right" value="<%= cart[i].qty %>"/></p>
+                 <p>Qty: <input type='text' name="qty" class="right" value="<%= cart[i].qty %>"/></p>
                  <p>Item Total: <span name="total" class="right">$<%= cart[i].total %></span></p>
                  <button class="updateItem right">Update</button>
             </div>

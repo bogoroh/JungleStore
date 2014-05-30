@@ -78,7 +78,7 @@ module.exports.routes = {
         action: 'viewcart'
     },
 
-    'put /affiliate1/cart': {
+    'post /affiliate1/cart/update': {
         controller: 'Affiliate1Controller',
         action: 'updateitem'
     },

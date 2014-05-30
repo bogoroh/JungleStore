@@ -36,15 +36,15 @@ $('.updateItem').click(function(e){
     var qty = item.find("input");
 
     $.ajax({
-        type: "PUT",
-        url: "/affiliate1/cart",
+        type: "POST",
+        url: "/affiliate1/cart/update",
         data: {
             'price': price,
             'sku': sku,
             'qty': qty
         },
         success: function(response){
-
+            console.log('YEAH UPDATED!!');
        
         }
     });

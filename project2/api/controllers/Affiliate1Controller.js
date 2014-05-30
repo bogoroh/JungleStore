@@ -439,6 +439,8 @@ module.exports = {
             }
         }
 
+        req.session.affiliate1cart = tempCart;
+
         var SubTotal = 0;
         for(var i = 0; i< tempCart.length; i++){
             SubTotal += Math.round(100*(tempCart[i].total))/100;
