@@ -21,7 +21,7 @@
         <% for(var i=0; i<details.length; i++) {%>
         <div class="product">
             <div data-sku="<%= details[i].sku %>" data-price="<%= prices[i].price %>" data-name="<%= details[i].name %>">
-                 <a href="/affiliate2/product/<%= details[i].sku %>"><img src="/images/<%= details[i].photos.thumbs[0] %>" class="productImage"></a>
+                 <a href="/affiliate2/product/<%= details[i].sku %>"><img class="thumbs" src="/images/<%= details[i].photos.thumbs[0] %>" class="productImage"></a>
                  <p name="itemName" class="itemname"><%= details[i].name %></p>
                  <p><span>msrp:</span> <span class="strikethrough right">$<%= details[i].msrp %></span></p>
                  <p><span>Our price:</span> <span name="price" class="right">$<%= prices[i].price %></span></p>
