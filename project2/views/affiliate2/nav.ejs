@@ -1,5 +1,7 @@
-<ul>
-    <% for(var i=0; i<categories.length; i++) {%>
-       <li><a href="/affiliate2/<%= categories[i].category %>"><%=: categories[i].category|capitalize %></a></li>
-    <% } %>
-</ul>
+<nav>
+	<ul>
+	    <% for(var i=0; i<categories.length; i++) {%>
+	       <li><a href="/affiliate2/<%= categories[i].category %>"><%=: categories[i].category|capitalize %></a></li>
+	    <% } %>
+	</ul>
+</nav>
