@@ -1,5 +1,6 @@
 <!-- Default home page -->
 <link type="text/css" href='/styles/affiliate1style.css' rel='stylesheet'/>
+<link href='http://fonts.googleapis.com/css?family=Oleo+Script:400,700|Lato' rel='stylesheet' type='text/css'>
 
 <!--[if IE 7]>
     <style>
@@ -19,10 +20,11 @@
         <%= details.name %>
     </span>
 
-    <form data-sku="<%= details.sku %>" data-price="<%= prices.price %>" data-name="<%= details.name %>">
+    <form class="productPage" data-sku="<%= details.sku %>" data-price="<%= prices.price %>" data-name="<%= details.name %>">
 
         <h3><%= details.name %></h3>
          <a href="/images/<%= details.photos.full[0] %>" data-lightbox="productImages"><img src="/images/<%= details.photos.full[0] %>"></a>
+         <div class='productInfo'>
         <p><%= details.description %></p>
 
          <p>msrp: <span class="strikethrough right">$<%= details.msrp %></span></p>
@@ -38,6 +40,7 @@
 
             <% } %>
         </p>
+        </div>
 
 
     </form>

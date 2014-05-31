@@ -1,5 +1,6 @@
 <!-- Default home page -->
 <link type="text/css" href='/styles/affiliate1style.css' rel='stylesheet'/>
+<link href='http://fonts.googleapis.com/css?family=Oleo+Script:400,700|Lato' rel='stylesheet' type='text/css'>
 
 <!--[if IE 7]>
     <style>
@@ -22,12 +23,12 @@
             <li data-sku="<%= cart[i].sku %>" data-price="<%= cart[i].price %>" data-name="<%= cart[i].name %>">
                 <!-- <a href="/affiliate1/product/<%= cart[i].sku %>"></a> -->
                 <div class="cartInfo">
-                    Qty: <input type='text' name="qty" value="<%= cart[i].qty %>"/><br>
+                    Qty: <input type='text' class="edit-box" name="qty" value="<%= cart[i].qty %>"/><br>
                     Item Total: <span name="total">$<span class="itemTotal"><%= cart[i].total %></span></span>
                 </div>
                 <div class="cartActions">
-                    <button class="updateItem">Update</button><br>
-                    <button class="deleteItem">Remove</button>
+                    <button class="updateItem update">Update</button><br>
+                    <button class="deleteItem remove">Remove</button>
                 </div>
 
 
@@ -44,7 +45,7 @@
     </ul>
 </div>
 
-<p>Total: $<span id="cartTotal"><%= total.total %></span></p>
+<h3>Total: $<span id="cartTotal"><%= total.total %></span></h3>
 </div>
 
 <script type="text/javascript" src="/js/Affiliate1.js"></script>

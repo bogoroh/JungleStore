@@ -1,5 +1,6 @@
 <!-- Default home page -->
 <link type="text/css" href='/styles/affiliate1style.css' rel='stylesheet'/>
+<link href='http://fonts.googleapis.com/css?family=Oleo+Script:400,700|Lato' rel='stylesheet' type='text/css'>
 
 <!--[if IE 7]>
     <style>
@@ -14,31 +15,21 @@
     <% include nav %>
 
 <% if (catPage.category) { %>
-    <h2><%= catPage.category %></h2>
+    <h2 id="af1-categories"><%= catPage.category %></h2>
 <% } %>
-
 
         <% for(var i=0; i<details.length; i++) {%>
         <div class="product">
             <div data-sku="<%= details[i].sku %>" data-price="<%= prices[i].price %>" data-name="<%= details[i].name %>">
-                 <a href="/affiliate1/product/<%= details[i].sku %>"><img src="/images/<%= details[i].photos.thumbs[0] %>" class="productImage"></a>
+                 <a href="/affiliate1/product/<%= details[i].sku %>"><img class="thumb" src="/images/<%= details[i].photos.thumbs[0] %>" class="productImage"></a>
                  <p name="itemName"><%= details[i].name %></p>
                  <p>msrp: <span class="strikethrough right">$<%= details[i].msrp %></span></p>
                  <p>Our price: <span name="price" class="right">$<%= prices[i].price %></span></p>
-
-                 <!-- <p>Whole Sale: </p><p><%= details[i].wholesale %></p> -->
-                 <!-- <p>Category: </p><p><%= details[i].category %></p> -->
-                 <!-- <p></p><p><%= details[i].stock %></p> -->
-                 <!-- <% for(var j=0; j<details[i].photos.length; j++) {%>
-                    <img src="/images/<%= details[i].photos[j] %>">
-                 <% } %> -->
-
-                 <!-- <p>SKU: </p><p name="sku"></p> -->
                  <button class="addToCart right">Add To Cart</button>
 
             </div>
         </div>
-
+    
 
         <% } %>
 </div>
